@@ -26,21 +26,20 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        if (App.wlite.accessToken != nil) {
-            Manager.sharedInstance.session.configuration.HTTPAdditionalHeaders = [
-                "X-Client-ID": App.appConfig.clientID,
-                "X-Access-Token": App.wlite.accessToken!
-            ]
-            fetchUser()
-        } else {
-            authenticate()
+        if (App.wlite.accessToken == nil) {
+            self.navigationController?.performSegueWithIdentifier("showAuthVC", sender: self)
         }
+        
+//        if (App.wlite.accessToken != nil) {
+//            fetchUser()
+//        } else {
+//            authenticate()
+//        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -80,11 +79,7 @@ class ViewController: UIViewController {
     
     private func authenticate() {
         App.wlite.authorize({ (token) -> Void in
-            App.wlite.accessToken = token
-            Manager.sharedInstance.session.configuration.HTTPAdditionalHeaders = [
-                "X-Client-ID": App.appConfig.clientID,
-                "X-Access-Token": App.wlite.accessToken!
-            ]
+            self.fetchUser()
         }, failureHandler: { (error) -> Void in
             println("error: \(error)")
         });
@@ -92,7 +87,6 @@ class ViewController: UIViewController {
     
     private func handleError(werror:Error) {
         if werror.isAuthenticationError {
-            App.wlite.accessToken = nil
             self.authenticate()
         }
         else {

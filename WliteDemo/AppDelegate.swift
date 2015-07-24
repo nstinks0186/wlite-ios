@@ -8,20 +8,30 @@
 
 import UIKit
 import CoreData
+import Wlite
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var wlite : Wlite!
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        // setup wlite
+        let appConfig = AppConfig(clientID:"**", clientSecret:"**", authCallbackUrl:"**")
+        wlite = Wlite(appConfig: appConfig)
+        
+        // for convenience, share wlite instance across the app
+        App.wlite = wlite;
+        
         return true
     }
     
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
-        App.wlite.handleOpenURL(url)
+        // let wlite handle the url (necessary for authentication)
+        wlite.handleOpenURL(url)
         return true
     }
 

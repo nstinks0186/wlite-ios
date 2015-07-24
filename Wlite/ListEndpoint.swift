@@ -28,7 +28,11 @@ public class ListEndpoint {
                     }
                     else if let rawObject = JSON as? [String:AnyObject]{
                         if let error = rawObject["error"] as? [String:AnyObject]{
-                            callback(lists: nil, error: Error(rawError: error))
+                            let werror = Error(rawError: error)
+                            if werror.isAuthenticationError {
+                                Wlite.updateAccessToken(nil)
+                            }
+                            callback(lists: nil, error: werror)
                         }
                     }
                 }

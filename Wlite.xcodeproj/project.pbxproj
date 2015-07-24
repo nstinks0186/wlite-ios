@@ -17,6 +17,7 @@
 		D70F40AF1B62BE23001B55D2 /* UserEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70F40AE1B62BE23001B55D2 /* UserEndpoint.swift */; };
 		D70F40B11B62BE96001B55D2 /* ListEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70F40B01B62BE96001B55D2 /* ListEndpoint.swift */; };
 		D70F40B31B62C028001B55D2 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70F40B21B62C028001B55D2 /* List.swift */; };
+		D70F40B61B62D4E8001B55D2 /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70F40B51B62D4E8001B55D2 /* AuthVC.swift */; };
 		D747D5DC1B62830300B1C5C0 /* Wlite.h in Headers */ = {isa = PBXBuildFile; fileRef = D747D5DB1B62830300B1C5C0 /* Wlite.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D747D5E21B62830300B1C5C0 /* Wlite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D747D5D61B62830300B1C5C0 /* Wlite.framework */; };
 		D747D5E91B62830300B1C5C0 /* WliteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D747D5E81B62830300B1C5C0 /* WliteTests.swift */; };
@@ -66,6 +67,7 @@
 		D70F40AE1B62BE23001B55D2 /* UserEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserEndpoint.swift; sourceTree = "<group>"; };
 		D70F40B01B62BE96001B55D2 /* ListEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListEndpoint.swift; sourceTree = "<group>"; };
 		D70F40B21B62C028001B55D2 /* List.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
+		D70F40B51B62D4E8001B55D2 /* AuthVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
 		D747D5D61B62830300B1C5C0 /* Wlite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Wlite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D747D5DA1B62830300B1C5C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D747D5DB1B62830300B1C5C0 /* Wlite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Wlite.h; sourceTree = "<group>"; };
@@ -137,6 +139,14 @@
 				D70F40B01B62BE96001B55D2 /* ListEndpoint.swift */,
 			);
 			name = API;
+			sourceTree = "<group>";
+		};
+		D70F40B41B62D4AA001B55D2 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D70F40B51B62D4E8001B55D2 /* AuthVC.swift */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		D747D5CC1B62830300B1C5C0 = {
@@ -218,11 +228,8 @@
 			children = (
 				D747D6261B6293E500B1C5C0 /* App.swift */,
 				D747D6051B628B6700B1C5C0 /* AppDelegate.swift */,
+				D70F40B41B62D4AA001B55D2 /* ViewControllers */,
 				D747D60A1B628B6700B1C5C0 /* ViewController.swift */,
-				D747D60C1B628B6700B1C5C0 /* Main.storyboard */,
-				D747D60F1B628B6700B1C5C0 /* Images.xcassets */,
-				D747D6111B628B6700B1C5C0 /* LaunchScreen.xib */,
-				D747D6071B628B6700B1C5C0 /* WliteDemo.xcdatamodeld */,
 				D747D6031B628B6700B1C5C0 /* Supporting Files */,
 			);
 			path = WliteDemo;
@@ -231,6 +238,10 @@
 		D747D6031B628B6700B1C5C0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D747D60C1B628B6700B1C5C0 /* Main.storyboard */,
+				D747D60F1B628B6700B1C5C0 /* Images.xcassets */,
+				D747D6111B628B6700B1C5C0 /* LaunchScreen.xib */,
+				D747D6071B628B6700B1C5C0 /* WliteDemo.xcdatamodeld */,
 				D747D6041B628B6700B1C5C0 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -498,6 +509,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D70F40B61B62D4E8001B55D2 /* AuthVC.swift in Sources */,
 				D747D60B1B628B6700B1C5C0 /* ViewController.swift in Sources */,
 				D747D6271B6293E500B1C5C0 /* App.swift in Sources */,
 				D747D6091B628B6700B1C5C0 /* WliteDemo.xcdatamodeld in Sources */,

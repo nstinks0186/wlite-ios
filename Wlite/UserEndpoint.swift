@@ -31,6 +31,9 @@ public class UserEndpoint {
                         }
                         else if let error = rawObject["error"] as? [String:AnyObject]{
                             let werror = Error(rawError: error)
+                            if werror.isAuthenticationError {
+                                Wlite.updateAccessToken(nil)
+                            }
                             callback(user: nil, error: werror)
                         }
                     }
