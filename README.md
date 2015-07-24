@@ -11,9 +11,9 @@ Wunderlist OAuth library for iOS.
 * Create a Wunderlist Application at https://developer.wunderlist.com/apps. 
 * Create an `AppConfig` using the info:
 ```
-let appConfig = AppConfig(clientID:"71436ba1a9dc81c908f1",
-  clientSecret:"0974ff4a3fbd2403522a7608c5a227e2e06f8925cdab58fd7a34f8199dc8",
-  authCallbackUrl:"https://dl.dropboxusercontent.com/u/33491043/sites/wlite/success.html")
+let appConfig = AppConfig(clientID:"**",
+  clientSecret:"**",
+  authCallbackUrl:"**")
 ```
 * Create a `Wlite` context using the appConfig: `let wlite = Wlite(appConfig: appConfig)`
 
