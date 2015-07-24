@@ -7,9 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D70F40A01B62A8C8001B55D2 /* Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70F409F1B62A8C8001B55D2 /* Object.swift */; };
+		D70F40A21B62A950001B55D2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70F40A11B62A950001B55D2 /* User.swift */; };
+		D70F40A41B62B17C001B55D2 /* AvatarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70F40A31B62B17C001B55D2 /* AvatarRouter.swift */; };
+		D70F40A61B62B1B6001B55D2 /* FolderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70F40A51B62B1B6001B55D2 /* FolderRouter.swift */; };
+		D70F40A81B62B1E4001B55D2 /* ListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70F40A71B62B1E4001B55D2 /* ListRouter.swift */; };
+		D70F40AA1B62B22B001B55D2 /* TaskRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70F40A91B62B22B001B55D2 /* TaskRouter.swift */; };
+		D70F40AC1B62B329001B55D2 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70F40AB1B62B329001B55D2 /* API.swift */; };
+		D70F40AF1B62BE23001B55D2 /* UserEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70F40AE1B62BE23001B55D2 /* UserEndpoint.swift */; };
+		D70F40B11B62BE96001B55D2 /* ListEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70F40B01B62BE96001B55D2 /* ListEndpoint.swift */; };
+		D70F40B31B62C028001B55D2 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70F40B21B62C028001B55D2 /* List.swift */; };
 		D747D5DC1B62830300B1C5C0 /* Wlite.h in Headers */ = {isa = PBXBuildFile; fileRef = D747D5DB1B62830300B1C5C0 /* Wlite.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D747D5E21B62830300B1C5C0 /* Wlite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D747D5D61B62830300B1C5C0 /* Wlite.framework */; };
 		D747D5E91B62830300B1C5C0 /* WliteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D747D5E81B62830300B1C5C0 /* WliteTests.swift */; };
+		D747D5F41B62857F00B1C5C0 /* Wlite.swift in Sources */ = {isa = PBXBuildFile; fileRef = D747D5F31B62857F00B1C5C0 /* Wlite.swift */; };
+		D747D5F71B62864C00B1C5C0 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = D747D5F61B62864C00B1C5C0 /* AppConfig.swift */; };
+		D747D5FA1B6289B300B1C5C0 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D747D5F81B6289B300B1C5C0 /* Alamofire.framework */; };
+		D747D5FB1B6289B300B1C5C0 /* OAuthSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D747D5F91B6289B300B1C5C0 /* OAuthSwift.framework */; };
+		D747D6061B628B6700B1C5C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D747D6051B628B6700B1C5C0 /* AppDelegate.swift */; };
+		D747D6091B628B6700B1C5C0 /* WliteDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D747D6071B628B6700B1C5C0 /* WliteDemo.xcdatamodeld */; };
+		D747D60B1B628B6700B1C5C0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D747D60A1B628B6700B1C5C0 /* ViewController.swift */; };
+		D747D60E1B628B6700B1C5C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D747D60C1B628B6700B1C5C0 /* Main.storyboard */; };
+		D747D6101B628B6700B1C5C0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D747D60F1B628B6700B1C5C0 /* Images.xcassets */; };
+		D747D6131B628B6700B1C5C0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D747D6111B628B6700B1C5C0 /* LaunchScreen.xib */; };
+		D747D61F1B628B6700B1C5C0 /* WliteDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D747D61E1B628B6700B1C5C0 /* WliteDemoTests.swift */; };
+		D747D6271B6293E500B1C5C0 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D747D6261B6293E500B1C5C0 /* App.swift */; };
+		D747D62A1B62977600B1C5C0 /* UserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D747D6291B62977600B1C5C0 /* UserRouter.swift */; };
+		D747D6331B629B5600B1C5C0 /* Wlite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D747D5D61B62830300B1C5C0 /* Wlite.framework */; };
+		D747D6361B629C5600B1C5C0 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D747D5F81B6289B300B1C5C0 /* Alamofire.framework */; };
+		D747D6381B629D0B00B1C5C0 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = D747D6371B629D0B00B1C5C0 /* Error.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -20,15 +46,50 @@
 			remoteGlobalIDString = D747D5D51B62830300B1C5C0;
 			remoteInfo = Wlite;
 		};
+		D747D6191B628B6700B1C5C0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D747D5CD1B62830300B1C5C0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D747D6001B628B6700B1C5C0;
+			remoteInfo = WliteDemo;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D70F409F1B62A8C8001B55D2 /* Object.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Object.swift; sourceTree = "<group>"; };
+		D70F40A11B62A950001B55D2 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D70F40A31B62B17C001B55D2 /* AvatarRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarRouter.swift; sourceTree = "<group>"; };
+		D70F40A51B62B1B6001B55D2 /* FolderRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FolderRouter.swift; sourceTree = "<group>"; };
+		D70F40A71B62B1E4001B55D2 /* ListRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListRouter.swift; sourceTree = "<group>"; };
+		D70F40A91B62B22B001B55D2 /* TaskRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskRouter.swift; sourceTree = "<group>"; };
+		D70F40AB1B62B329001B55D2 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		D70F40AE1B62BE23001B55D2 /* UserEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserEndpoint.swift; sourceTree = "<group>"; };
+		D70F40B01B62BE96001B55D2 /* ListEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListEndpoint.swift; sourceTree = "<group>"; };
+		D70F40B21B62C028001B55D2 /* List.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
 		D747D5D61B62830300B1C5C0 /* Wlite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Wlite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D747D5DA1B62830300B1C5C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D747D5DB1B62830300B1C5C0 /* Wlite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Wlite.h; sourceTree = "<group>"; };
 		D747D5E11B62830300B1C5C0 /* WliteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WliteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D747D5E71B62830300B1C5C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D747D5E81B62830300B1C5C0 /* WliteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WliteTests.swift; sourceTree = "<group>"; };
+		D747D5F31B62857F00B1C5C0 /* Wlite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Wlite.swift; path = ../../Wlite.swift; sourceTree = "<group>"; };
+		D747D5F61B62864C00B1C5C0 /* AppConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		D747D5F81B6289B300B1C5C0 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		D747D5F91B6289B300B1C5C0 /* OAuthSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OAuthSwift.framework; path = Carthage/Build/iOS/OAuthSwift.framework; sourceTree = "<group>"; };
+		D747D6011B628B6700B1C5C0 /* WliteDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WliteDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D747D6041B628B6700B1C5C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D747D6051B628B6700B1C5C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D747D6081B628B6700B1C5C0 /* WliteDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WliteDemo.xcdatamodel; sourceTree = "<group>"; };
+		D747D60A1B628B6700B1C5C0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D747D60D1B628B6700B1C5C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D747D60F1B628B6700B1C5C0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D747D6121B628B6700B1C5C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		D747D6181B628B6700B1C5C0 /* WliteDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WliteDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D747D61D1B628B6700B1C5C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D747D61E1B628B6700B1C5C0 /* WliteDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WliteDemoTests.swift; sourceTree = "<group>"; };
+		D747D6261B6293E500B1C5C0 /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		D747D6291B62977600B1C5C0 /* UserRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRouter.swift; sourceTree = "<group>"; };
+		D747D6371B629D0B00B1C5C0 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +97,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D747D5FA1B6289B300B1C5C0 /* Alamofire.framework in Frameworks */,
+				D747D5FB1B6289B300B1C5C0 /* OAuthSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,15 +110,45 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D747D5FE1B628B6700B1C5C0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D747D6361B629C5600B1C5C0 /* Alamofire.framework in Frameworks */,
+				D747D6331B629B5600B1C5C0 /* Wlite.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D747D6151B628B6700B1C5C0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D70F40AD1B62BBD7001B55D2 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				D70F40AB1B62B329001B55D2 /* API.swift */,
+				D70F40AE1B62BE23001B55D2 /* UserEndpoint.swift */,
+				D70F40B01B62BE96001B55D2 /* ListEndpoint.swift */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
 		D747D5CC1B62830300B1C5C0 = {
 			isa = PBXGroup;
 			children = (
 				D747D5D81B62830300B1C5C0 /* Wlite */,
 				D747D5E51B62830300B1C5C0 /* WliteTests */,
+				D747D6021B628B6700B1C5C0 /* WliteDemo */,
+				D747D61B1B628B6700B1C5C0 /* WliteDemoTests */,
 				D747D5D71B62830300B1C5C0 /* Products */,
+				D747D5F81B6289B300B1C5C0 /* Alamofire.framework */,
+				D747D5F91B6289B300B1C5C0 /* OAuthSwift.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +157,8 @@
 			children = (
 				D747D5D61B62830300B1C5C0 /* Wlite.framework */,
 				D747D5E11B62830300B1C5C0 /* WliteTests.xctest */,
+				D747D6011B628B6700B1C5C0 /* WliteDemo.app */,
+				D747D6181B628B6700B1C5C0 /* WliteDemoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -71,7 +166,11 @@
 		D747D5D81B62830300B1C5C0 /* Wlite */ = {
 			isa = PBXGroup;
 			children = (
-				D747D5DB1B62830300B1C5C0 /* Wlite.h */,
+				D747D5F31B62857F00B1C5C0 /* Wlite.swift */,
+				D747D5F61B62864C00B1C5C0 /* AppConfig.swift */,
+				D70F40AD1B62BBD7001B55D2 /* API */,
+				D747D5F51B62863F00B1C5C0 /* Core */,
+				D747D6281B62970C00B1C5C0 /* Routers */,
 				D747D5D91B62830300B1C5C0 /* Supporting Files */,
 			);
 			path = Wlite;
@@ -80,6 +179,7 @@
 		D747D5D91B62830300B1C5C0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D747D5DB1B62830300B1C5C0 /* Wlite.h */,
 				D747D5DA1B62830300B1C5C0 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -100,6 +200,69 @@
 				D747D5E71B62830300B1C5C0 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D747D5F51B62863F00B1C5C0 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				D70F409F1B62A8C8001B55D2 /* Object.swift */,
+				D747D6371B629D0B00B1C5C0 /* Error.swift */,
+				D70F40A11B62A950001B55D2 /* User.swift */,
+				D70F40B21B62C028001B55D2 /* List.swift */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		D747D6021B628B6700B1C5C0 /* WliteDemo */ = {
+			isa = PBXGroup;
+			children = (
+				D747D6261B6293E500B1C5C0 /* App.swift */,
+				D747D6051B628B6700B1C5C0 /* AppDelegate.swift */,
+				D747D60A1B628B6700B1C5C0 /* ViewController.swift */,
+				D747D60C1B628B6700B1C5C0 /* Main.storyboard */,
+				D747D60F1B628B6700B1C5C0 /* Images.xcassets */,
+				D747D6111B628B6700B1C5C0 /* LaunchScreen.xib */,
+				D747D6071B628B6700B1C5C0 /* WliteDemo.xcdatamodeld */,
+				D747D6031B628B6700B1C5C0 /* Supporting Files */,
+			);
+			path = WliteDemo;
+			sourceTree = "<group>";
+		};
+		D747D6031B628B6700B1C5C0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D747D6041B628B6700B1C5C0 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D747D61B1B628B6700B1C5C0 /* WliteDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				D747D61E1B628B6700B1C5C0 /* WliteDemoTests.swift */,
+				D747D61C1B628B6700B1C5C0 /* Supporting Files */,
+			);
+			path = WliteDemoTests;
+			sourceTree = "<group>";
+		};
+		D747D61C1B628B6700B1C5C0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D747D61D1B628B6700B1C5C0 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D747D6281B62970C00B1C5C0 /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				D747D6291B62977600B1C5C0 /* UserRouter.swift */,
+				D70F40A31B62B17C001B55D2 /* AvatarRouter.swift */,
+				D70F40A51B62B1B6001B55D2 /* FolderRouter.swift */,
+				D70F40A71B62B1E4001B55D2 /* ListRouter.swift */,
+				D70F40A91B62B22B001B55D2 /* TaskRouter.swift */,
+			);
+			name = Routers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,6 +287,7 @@
 				D747D5D21B62830300B1C5C0 /* Frameworks */,
 				D747D5D31B62830300B1C5C0 /* Headers */,
 				D747D5D41B62830300B1C5C0 /* Resources */,
+				D747D5FC1B6289ED00B1C5C0 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -152,6 +316,42 @@
 			productReference = D747D5E11B62830300B1C5C0 /* WliteTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		D747D6001B628B6700B1C5C0 /* WliteDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D747D6201B628B6700B1C5C0 /* Build configuration list for PBXNativeTarget "WliteDemo" */;
+			buildPhases = (
+				D747D5FD1B628B6700B1C5C0 /* Sources */,
+				D747D5FE1B628B6700B1C5C0 /* Frameworks */,
+				D747D5FF1B628B6700B1C5C0 /* Resources */,
+				D747D62E1B6299AB00B1C5C0 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WliteDemo;
+			productName = WliteDemo;
+			productReference = D747D6011B628B6700B1C5C0 /* WliteDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D747D6171B628B6700B1C5C0 /* WliteDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D747D6231B628B6700B1C5C0 /* Build configuration list for PBXNativeTarget "WliteDemoTests" */;
+			buildPhases = (
+				D747D6141B628B6700B1C5C0 /* Sources */,
+				D747D6151B628B6700B1C5C0 /* Frameworks */,
+				D747D6161B628B6700B1C5C0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D747D61A1B628B6700B1C5C0 /* PBXTargetDependency */,
+			);
+			name = WliteDemoTests;
+			productName = WliteDemoTests;
+			productReference = D747D6181B628B6700B1C5C0 /* WliteDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -167,6 +367,13 @@
 					D747D5E01B62830300B1C5C0 = {
 						CreatedOnToolsVersion = 6.4;
 					};
+					D747D6001B628B6700B1C5C0 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					D747D6171B628B6700B1C5C0 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = D747D6001B628B6700B1C5C0;
+					};
 				};
 			};
 			buildConfigurationList = D747D5D01B62830300B1C5C0 /* Build configuration list for PBXProject "Wlite" */;
@@ -175,6 +382,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = D747D5CC1B62830300B1C5C0;
 			productRefGroup = D747D5D71B62830300B1C5C0 /* Products */;
@@ -183,6 +391,8 @@
 			targets = (
 				D747D5D51B62830300B1C5C0 /* Wlite */,
 				D747D5E01B62830300B1C5C0 /* WliteTests */,
+				D747D6001B628B6700B1C5C0 /* WliteDemo */,
+				D747D6171B628B6700B1C5C0 /* WliteDemoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -202,13 +412,77 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D747D5FF1B628B6700B1C5C0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D747D60E1B628B6700B1C5C0 /* Main.storyboard in Resources */,
+				D747D6131B628B6700B1C5C0 /* LaunchScreen.xib in Resources */,
+				D747D6101B628B6700B1C5C0 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D747D6161B628B6700B1C5C0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D747D5FC1B6289ED00B1C5C0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/OAuthSwift.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "";
+		};
+		D747D62E1B6299AB00B1C5C0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/OAuthSwift.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D747D5D11B62830300B1C5C0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D70F40AC1B62B329001B55D2 /* API.swift in Sources */,
+				D70F40B11B62BE96001B55D2 /* ListEndpoint.swift in Sources */,
+				D70F40A81B62B1E4001B55D2 /* ListRouter.swift in Sources */,
+				D70F40AA1B62B22B001B55D2 /* TaskRouter.swift in Sources */,
+				D70F40A01B62A8C8001B55D2 /* Object.swift in Sources */,
+				D70F40A41B62B17C001B55D2 /* AvatarRouter.swift in Sources */,
+				D70F40A61B62B1B6001B55D2 /* FolderRouter.swift in Sources */,
+				D747D6381B629D0B00B1C5C0 /* Error.swift in Sources */,
+				D70F40A21B62A950001B55D2 /* User.swift in Sources */,
+				D70F40B31B62C028001B55D2 /* List.swift in Sources */,
+				D747D5F41B62857F00B1C5C0 /* Wlite.swift in Sources */,
+				D70F40AF1B62BE23001B55D2 /* UserEndpoint.swift in Sources */,
+				D747D62A1B62977600B1C5C0 /* UserRouter.swift in Sources */,
+				D747D5F71B62864C00B1C5C0 /* AppConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,6 +494,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D747D5FD1B628B6700B1C5C0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D747D60B1B628B6700B1C5C0 /* ViewController.swift in Sources */,
+				D747D6271B6293E500B1C5C0 /* App.swift in Sources */,
+				D747D6091B628B6700B1C5C0 /* WliteDemo.xcdatamodeld in Sources */,
+				D747D6061B628B6700B1C5C0 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D747D6141B628B6700B1C5C0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D747D61F1B628B6700B1C5C0 /* WliteDemoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -228,7 +521,31 @@
 			target = D747D5D51B62830300B1C5C0 /* Wlite */;
 			targetProxy = D747D5E31B62830300B1C5C0 /* PBXContainerItemProxy */;
 		};
+		D747D61A1B628B6700B1C5C0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D747D6001B628B6700B1C5C0 /* WliteDemo */;
+			targetProxy = D747D6191B628B6700B1C5C0 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D747D60C1B628B6700B1C5C0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D747D60D1B628B6700B1C5C0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D747D6111B628B6700B1C5C0 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D747D6121B628B6700B1C5C0 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		D747D5EA1B62830300B1C5C0 /* Debug */ = {
@@ -323,25 +640,36 @@
 		D747D5ED1B62830300B1C5C0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Wlite/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		D747D5EE1B62830300B1C5C0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Wlite/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -380,6 +708,72 @@
 			};
 			name = Release;
 		};
+		D747D6211B628B6700B1C5C0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = WliteDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D747D6221B628B6700B1C5C0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = WliteDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D747D6241B628B6700B1C5C0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = WliteDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WliteDemo.app/WliteDemo";
+			};
+			name = Debug;
+		};
+		D747D6251B628B6700B1C5C0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = WliteDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WliteDemo.app/WliteDemo";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -399,6 +793,7 @@
 				D747D5EE1B62830300B1C5C0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D747D5EF1B62830300B1C5C0 /* Build configuration list for PBXNativeTarget "WliteTests" */ = {
 			isa = XCConfigurationList;
@@ -407,8 +802,40 @@
 				D747D5F11B62830300B1C5C0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D747D6201B628B6700B1C5C0 /* Build configuration list for PBXNativeTarget "WliteDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D747D6211B628B6700B1C5C0 /* Debug */,
+				D747D6221B628B6700B1C5C0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D747D6231B628B6700B1C5C0 /* Build configuration list for PBXNativeTarget "WliteDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D747D6241B628B6700B1C5C0 /* Debug */,
+				D747D6251B628B6700B1C5C0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D747D6071B628B6700B1C5C0 /* WliteDemo.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D747D6081B628B6700B1C5C0 /* WliteDemo.xcdatamodel */,
+			);
+			currentVersion = D747D6081B628B6700B1C5C0 /* WliteDemo.xcdatamodel */;
+			path = WliteDemo.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D747D5CD1B62830300B1C5C0 /* Project object */;
 }
