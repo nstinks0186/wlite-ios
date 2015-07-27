@@ -58,3 +58,20 @@ wlite.api.user.fetchLoggedInUser { (user, error) -> Void in
     }
   }
 ```
+
+### List
+
+* Get all lists user has permission
+```
+App.wlite.api.list.fetchLoggedInUserLists { (lists, error) -> Void in
+    if let werror = error {
+        println("\(werror.type) | \(werror.message)")
+    }
+    else if let wlists = lists{
+      println("lists: \(wlists.count)")
+      for list:List in wlists {
+        println("  \(list.title.capitalizedString) | \(list.listType.rawValue) ")
+      }
+    }
+  }
+```
