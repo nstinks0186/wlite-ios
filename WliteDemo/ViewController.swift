@@ -112,7 +112,34 @@ class ViewController: UIViewController {
     private func testAPICalls() {
 //        self.fetchLists()
 //        self.fetchList(141552880)
-        self.createListWithTitle("TestList")
+//        self.createListWithTitle("TestList")
+        
+        func test () {
+            let newlist = List(title:"NewList")
+            App.wlite.api.list.createList(newlist) { (list, error) -> Void in
+                if let werror = error {
+                    self.handleError(werror)
+                }
+                else if let wlist = list {
+                    println("new list: \(newlist.id) | \(newlist.title.capitalizedString) | \(newlist.listType.rawValue) ")
+                    
+                    let updatedList = newlist
+                    updatedList.title = "UpdatedList"
+                    App.wlite.api.list.updateList(updatedList, callback: { (list, error) -> Void in
+                        if let werror = error {
+                            self.handleError(werror)
+                        }
+                        else if let wlist = list {
+                            println("updated list: \(updatedList.id) | \(updatedList.title.capitalizedString) | \(updatedList.listType.rawValue) ")
+                            
+                        }
+                    })
+                }
+            }
+        }
+        test()
+        
+        
     }
     
     private func handleError(werror:Error) {
@@ -120,7 +147,7 @@ class ViewController: UIViewController {
             self.authenticate()
         }
         else {
-            println("error: \(werror)")
+            println("error: \(werror.type.rawValue) | \(werror.message.rawValue)")
         }
     }
 

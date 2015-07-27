@@ -133,5 +133,48 @@ public class ListEndpoint {
         }
     }
     
+    /**
+    Update a list by overwriting properties
+    
+    :param: list The list
+    :param: callback The callback function
+    */
+    public func updateList(list:List, callback:(list: List?, error: Error?) -> Void) {
+        let parameters : [ String : AnyObject] = [
+            "id": list.id,
+            "revision": list.revision,
+            "title": list.title
+        ]
+        Alamofire
+            .request(ListRouter.UpdateList(parameters))
+            .responseJSON(options: nil) {(request: NSURLRequest, response: NSHTTPURLResponse?, JSON: AnyObject?, error: NSError?) -> Void in
+                if (error != nil) {
+                    println("error: \(error)")
+                }
+                else if (JSON != nil) {
+                    if let rawObject = JSON as? [String:AnyObject] {
+                        if let error = rawObject["error"] as? [String:AnyObject]{
+                            let werror = Error(rawError: error)
+                            if werror.isAuthenticationError {
+                                Wlite.updateAccessToken(nil)
+                            }
+                            callback(list: nil, error: werror)
+                        }
+                        else if let id = rawObject["id"] as? Int{
+                            list.update(rawObject)
+                            callback(list: list, error: nil)
+                        }
+                        else {
+                            println("JSON: \(JSON)")
+                        }
+                    }
+                }
+                else {
+                    println("JSON: \(JSON)")
+                }
+        }
+    }
+    
+    
 }
 

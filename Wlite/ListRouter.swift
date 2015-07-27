@@ -15,7 +15,7 @@ public enum ListRouter: URLRequestConvertible {
     case ReadLists()
     case CreateList([String: AnyObject])
     case ReadList(String)
-    case UpdateList(String)
+    case UpdateList([String: AnyObject])
     case DeleteList(String)
     
     var method: Alamofire.Method {
@@ -41,10 +41,13 @@ public enum ListRouter: URLRequestConvertible {
             return "/lists"
         case .ReadList(let listid):
             return "/lists/\(listid)"
-        case .UpdateList(let listid):
+        case .UpdateList(let parameters):
+            let listid = parameters["id"] as! Int
             return "/lists/\(listid)"
         case .DeleteList(let listid):
             return "/lists/\(listid)"
+        default:
+            return ""
         }
     }
     
@@ -61,6 +64,8 @@ public enum ListRouter: URLRequestConvertible {
         
         switch self {
         case .CreateList(let parameters):
+            return Alamofire.ParameterEncoding.JSON.encode(mutableURLRequest, parameters: parameters).0
+        case .UpdateList(let parameters):
             return Alamofire.ParameterEncoding.JSON.encode(mutableURLRequest, parameters: parameters).0
         default:
             return mutableURLRequest

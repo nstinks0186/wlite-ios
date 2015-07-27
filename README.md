@@ -51,7 +51,7 @@ wlite.authorize({ (token) -> Void in
 ```
 wlite.api.user.fetchLoggedInUser { (user, error) -> Void in
     if let werror = error{
-      println("\(werror.type) | \(werror.message)")
+      println("error: \(werror.type.rawValue) | \(werror.message.rawValue)")
     }
     else if let wuser = user {
       println("\(wuser.name) | \(wuser.email)")
@@ -65,7 +65,7 @@ wlite.api.user.fetchLoggedInUser { (user, error) -> Void in
 ```
 wlite.api.list.fetchLoggedInUserLists { (lists, error) -> Void in
     if let werror = error {
-      println("\(werror.type) | \(werror.message)")
+      println("error: \(werror.type.rawValue) | \(werror.message.rawValue)")
     }
     else if let wlists = lists{
       println("lists: \(wlists.count)")
@@ -80,7 +80,7 @@ wlite.api.list.fetchLoggedInUserLists { (lists, error) -> Void in
 let listid = 32767 // id of a specific list
 wlite.api.list.fetchList(listid, callback: { (list, error) -> Void in
   if let werror = error {
-    println("\(werror.type) | \(werror.message)")
+    println("error: \(werror.type.rawValue) | \(werror.message.rawValue)")
   }
   else if let wlist = list {
     println("list: \(wlist.id) | \(wlist.title.capitalizedString) | \(wlist.listType.rawValue) ")
@@ -90,12 +90,26 @@ wlite.api.list.fetchList(listid, callback: { (list, error) -> Void in
 * Create a list
 ```
 let newlist = List(title:"HolaMundo")
-App.wlite.api.list.createList(newlist, callback: { (list, error) -> Void in
+wlite.api.list.createList(newlist, callback: { (list, error) -> Void in
   if let werror = error {
-      self.handleError(werror)
+    println("error: \(werror.type.rawValue) | \(werror.message.rawValue)")
   }
   else if let wlist = list {
-      println("new list: \(newlist.id) | \(newlist.title.capitalizedString) | \(newlist.listType.rawValue) ")
+    println("new list: \(newlist.id) | \(newlist.title.capitalizedString) | \(newlist.listType.rawValue) ")
   }
 })
 ```
+* Update a list by overwriting properties
+```
+// assuming updatedList is an actual list fetched from Wunderlist with id and revision values
+updatedList.title = "UpdatedList"
+wlite.api.list.updateList(updatedList, callback: { (list, error) -> Void in
+  if let werror = error {
+    println("error: \(werror.type.rawValue) | \(werror.message.rawValue)")
+  }
+  else if let wlist = list {
+    println("updated list: \(updatedList.id) | \(updatedList.title.capitalizedString) | \(updatedList.listType.rawValue) ")
+  }
+})
+```
+

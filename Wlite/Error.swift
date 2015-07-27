@@ -13,26 +13,34 @@ enum ErrorAuthentication : String {
     case Undefined = ""
 }
 
-enum ErrorMessage : String {
+enum ErrorRevision : String {
+    case Required = "required"
+    case Undefined = ""
+}
+
+public enum ErrorMessage : String {
     case UnknownServerError = "An unknown server error occurred"
+    case MissingParameterError = "Missing parameter."
     case Undefined = ""
 }
 
-enum ErrorTranslationKey : String {
+public enum ErrorTranslationKey : String {
     case APIErrorUnknown = "api_error_unknown"
+    case APIErrorMissingParams = "api_error_missing_params"
     case Undefined = ""
 }
 
-enum ErrorType : String {
+public enum ErrorType : String {
     case ServerError = "server_error"
+    case MissingParameter = "missing_parameter"
     case Undefined = ""
 }
 
 public class Error {
     var authentication = [ErrorAuthentication]()
-    var translationKey = ErrorTranslationKey.Undefined
-    var message = ErrorMessage.Undefined
-    var type = ErrorType.Undefined
+    public var translationKey = ErrorTranslationKey.Undefined
+    public var message = ErrorMessage.Undefined
+    public var type = ErrorType.Undefined
     
     public var isAuthenticationError : Bool {
         get {
@@ -51,20 +59,37 @@ public class Error {
     }
     
     public convenience init(rawError:[String:AnyObject]){
-        let rawauthentication = rawError["authentication"] as! NSArray
+        println("raw error: \(rawError)")
+        
         var authentication = [ErrorAuthentication]()
-        for auth in rawauthentication {
-            authentication.append((auth as! String == "missing" ? .Missing : .Undefined))
+        if  let rawauthentication = rawError["authentication"] as? NSArray {
+            for auth in rawauthentication {
+                if let errorAuth = ErrorAuthentication(rawValue: auth as! String) {
+                    authentication.append(errorAuth)
+                }
+            }
         }
         
-        let rawtranslationKey = rawError["translation_key"] as! NSString
-        let translationKey = (rawtranslationKey as! String == "api_error_unknown" ? ErrorTranslationKey.APIErrorUnknown : ErrorTranslationKey.Undefined)
+        var translationKey = ErrorTranslationKey.Undefined
+        if let rawtranslationKey = rawError["translation_key"] as? NSString {
+            if let tempTranslationKey = ErrorTranslationKey(rawValue: rawtranslationKey as! String) {
+                translationKey = tempTranslationKey
+            }
+        }
         
-        let rawmessage = rawError["message"] as! NSString
-        let message = (rawmessage as! String == "An unknown server error occurred" ? ErrorMessage.UnknownServerError : ErrorMessage.Undefined)
+        var message = ErrorMessage.Undefined
+        if let rawmessage = rawError["message"] as? NSString {
+            if let tempMessage = ErrorMessage(rawValue: rawmessage as! String) {
+                message = tempMessage
+            }
+        }
         
-        let rawtype = rawError["type"] as! NSString
-        let type = (rawtype as! String == "server_error" ? ErrorType.ServerError : ErrorType.Undefined)
+        var type = ErrorType.Undefined
+        if let rawtype = rawError["type"] as? NSString {
+            if let tempType = ErrorType(rawValue: rawtype as! String) {
+                type = tempType
+            }
+        }
         
         self.init(authentication:authentication, translationKey:translationKey, message:message, type:type)
     }
