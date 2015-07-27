@@ -4,7 +4,27 @@ wlite-ios
 Wunderlist OAuth library for iOS.
 
 [![Platform](http://img.shields.io/badge/platform-ios-blue.svg?style=flat)](https://developer.apple.com/iphone/index.action) [![Language](http://img.shields.io/badge/language-swift-brightgreen.svg?style=flat
-)](https://developer.apple.com/swift) [![Build Status](https://travis-ci.org/nstinks0186/wlite-ios.svg?branch=master)](https://travis-ci.org/nstinks0186/wlite-ios)
+)](https://developer.apple.com/swift) [![Build Status](https://travis-ci.org/nstinks0186/wlite-ios.svg?branch=master)](https://travis-ci.org/nstinks0186/wlite-ios) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+
+## Installation
+
+### Carthage 
+
+[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that automates the process of adding frameworks to your Cocoa application. (See Carthage installation instruction [here](https://github.com/Carthage/Carthage#installing-carthage).)
+
+To integrate Wlite using Carthage, specify it in your Cartfile:
+```
+github "nstinks0186/wlite-ios"
+```
+
+### Manually
+
+To integrate Wlite manually, you can clone the project and run it manually:
+```
+git clone https://github.com/nstinks0186/wlite-ios.git
+```
+
+Running the Wlite project should create Wlite.framework. You can then add that framework to your project.
 
 ## Setup
 
