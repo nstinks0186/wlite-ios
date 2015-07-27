@@ -38,6 +38,7 @@ let appConfig = AppConfig(clientID:"**",
 * Create a `Wlite` context using the appConfig: `let wlite = Wlite(appConfig: appConfig)`
 
 ### Auth Callback URL
+
 * The authCallbackUrl in the `AppConfig` should match the Auth Callback URL setting in the "My Apps" settings
 * The Wunderlist API does not support iOS integration right now so the Auth Callback URL should be an HTTP url. As a workaround, you can process the token in an HTTP resource and redirect the token to your app:
 ```
@@ -61,6 +62,13 @@ wlite.authorize({ (token) -> Void in
   }, failureHandler: { (error) -> Void in
     // Handle auth failure here
   })
+```
+
+### Access Token
+
+After a successful authentication, the access token is saved in the user defaults. For convenience, you can access the token using the following code:
+```
+App.wlite.accessToken
 ```
 
 ## API Usage Examples

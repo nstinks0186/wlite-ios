@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>B2C7063A-D58E-41D5-AEB7-FFF3281CCE56</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>Wlite</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>5796F83C2C0A0AB0A639CFB252062FA615319E9C</key>
 		<string>https://github.com/nstinks0186/wlite-ios.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Wlite.xcodeproj/project.xcworkspace</string>
+	<string>Wlite.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>5796F83C2C0A0AB0A639CFB252062FA615319E9C</key>
