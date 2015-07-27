@@ -18,10 +18,10 @@
 		D70F40B11B62BE96001B55D2 /* ListEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70F40B01B62BE96001B55D2 /* ListEndpoint.swift */; };
 		D70F40B31B62C028001B55D2 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70F40B21B62C028001B55D2 /* List.swift */; };
 		D70F40B61B62D4E8001B55D2 /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70F40B51B62D4E8001B55D2 /* AuthVC.swift */; };
+		D70F40B81B66C989001B55D2 /* Wlite.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70F40B71B66C989001B55D2 /* Wlite.swift */; };
 		D747D5DC1B62830300B1C5C0 /* Wlite.h in Headers */ = {isa = PBXBuildFile; fileRef = D747D5DB1B62830300B1C5C0 /* Wlite.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D747D5E21B62830300B1C5C0 /* Wlite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D747D5D61B62830300B1C5C0 /* Wlite.framework */; };
 		D747D5E91B62830300B1C5C0 /* WliteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D747D5E81B62830300B1C5C0 /* WliteTests.swift */; };
-		D747D5F41B62857F00B1C5C0 /* Wlite.swift in Sources */ = {isa = PBXBuildFile; fileRef = D747D5F31B62857F00B1C5C0 /* Wlite.swift */; };
 		D747D5F71B62864C00B1C5C0 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = D747D5F61B62864C00B1C5C0 /* AppConfig.swift */; };
 		D747D5FA1B6289B300B1C5C0 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D747D5F81B6289B300B1C5C0 /* Alamofire.framework */; };
 		D747D5FB1B6289B300B1C5C0 /* OAuthSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D747D5F91B6289B300B1C5C0 /* OAuthSwift.framework */; };
@@ -68,13 +68,13 @@
 		D70F40B01B62BE96001B55D2 /* ListEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListEndpoint.swift; sourceTree = "<group>"; };
 		D70F40B21B62C028001B55D2 /* List.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
 		D70F40B51B62D4E8001B55D2 /* AuthVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
+		D70F40B71B66C989001B55D2 /* Wlite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wlite.swift; sourceTree = "<group>"; };
 		D747D5D61B62830300B1C5C0 /* Wlite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Wlite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D747D5DA1B62830300B1C5C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D747D5DB1B62830300B1C5C0 /* Wlite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Wlite.h; sourceTree = "<group>"; };
 		D747D5E11B62830300B1C5C0 /* WliteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WliteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D747D5E71B62830300B1C5C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D747D5E81B62830300B1C5C0 /* WliteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WliteTests.swift; sourceTree = "<group>"; };
-		D747D5F31B62857F00B1C5C0 /* Wlite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Wlite.swift; path = ../../Wlite.swift; sourceTree = "<group>"; };
 		D747D5F61B62864C00B1C5C0 /* AppConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		D747D5F81B6289B300B1C5C0 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		D747D5F91B6289B300B1C5C0 /* OAuthSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OAuthSwift.framework; path = Carthage/Build/iOS/OAuthSwift.framework; sourceTree = "<group>"; };
@@ -176,7 +176,7 @@
 		D747D5D81B62830300B1C5C0 /* Wlite */ = {
 			isa = PBXGroup;
 			children = (
-				D747D5F31B62857F00B1C5C0 /* Wlite.swift */,
+				D70F40B71B66C989001B55D2 /* Wlite.swift */,
 				D747D5F61B62864C00B1C5C0 /* AppConfig.swift */,
 				D70F40AD1B62BBD7001B55D2 /* API */,
 				D747D5F51B62863F00B1C5C0 /* Core */,
@@ -490,8 +490,8 @@
 				D747D6381B629D0B00B1C5C0 /* Error.swift in Sources */,
 				D70F40A21B62A950001B55D2 /* User.swift in Sources */,
 				D70F40B31B62C028001B55D2 /* List.swift in Sources */,
-				D747D5F41B62857F00B1C5C0 /* Wlite.swift in Sources */,
 				D70F40AF1B62BE23001B55D2 /* UserEndpoint.swift in Sources */,
+				D70F40B81B66C989001B55D2 /* Wlite.swift in Sources */,
 				D747D62A1B62977600B1C5C0 /* UserRouter.swift in Sources */,
 				D747D5F71B62864C00B1C5C0 /* AppConfig.swift in Sources */,
 			);
