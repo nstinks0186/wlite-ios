@@ -17,6 +17,14 @@ let appConfig = AppConfig(clientID:"**",
 ```
 * Create a `Wlite` context using the appConfig: `let wlite = Wlite(appConfig: appConfig)`
 
+### Auth Callback URL
+* The authCallbackUrl in the `AppConfig` should match the Auth Callback URL setting in the "My Apps" settings
+* The Wunderlist API does not support iOS integration right now so the Auth Callback URL should be an HTTP url. As a workaround, you can process the token in an HTTP resource and redirect the token to your app:
+```
+  window.location.assign(<YourAppURLSchemeHere> + "://<YourAppDomainHere>?token=" + token)
+```
+* Read additional info here: https://developer.wunderlist.com/documentation/concepts/authorization
+
 ## Authentication
 
 * In the App delegate, let `wlite` handle URLs:
