@@ -30,7 +30,7 @@ let appConfig = AppConfig(clientID:"**",
 * In the App delegate, let `wlite` handle URLs:
 ```
 func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
-  Wlite.handleOpenURL(url)
+  wlite.handleOpenURL(url)
   return true
 }
 ```
