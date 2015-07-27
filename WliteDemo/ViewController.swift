@@ -78,26 +78,26 @@ class ViewController: UIViewController {
     }
     
     private func fetchList(listid:Int) {
-        App.wlite.api.list.fetchList(listid, callback: { (list, error) -> Void in
+        App.wlite.api.list.fetchList(listid) { (list, error) -> Void in
             if let werror = error {
                 self.handleError(werror)
             }
             else if let wlist = list {
                 println("list: \(wlist.id) | \(wlist.title.capitalizedString) | \(wlist.listType.rawValue) ")
             }
-        })
+        }
     }
     
     private func createListWithTitle(listtitle:String){
         let newlist = List(title:listtitle)
-        App.wlite.api.list.createList(newlist, callback: { (list, error) -> Void in
+        App.wlite.api.list.createList(newlist) { (list, error) -> Void in
             if let werror = error {
                 self.handleError(werror)
             }
             else if let wlist = list {
                 println("new list: \(newlist.id) | \(newlist.title.capitalizedString) | \(newlist.listType.rawValue) ")
             }
-        })
+        }
     }
     
     private func authenticate() {

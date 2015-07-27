@@ -38,7 +38,7 @@ public class List : Object{
         self.title = title
     }
     
-    public func update(rawList: [String:AnyObject]) {
+    func update(rawList: [String:AnyObject]) {
         let id = rawList["id"] as! Int
         let revision = rawList["revision"] as! Int
         let title = rawList["title"] as! String
