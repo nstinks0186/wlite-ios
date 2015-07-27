@@ -30,7 +30,7 @@ let appConfig = AppConfig(clientID:"**",
 * In the App delegate, let `wlite` handle URLs:
 ```
 func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
-  Wlite.handleOpenURL(url)
+  wlite.handleOpenURL(url)
   return true
 }
 ```
@@ -57,4 +57,33 @@ wlite.api.user.fetchLoggedInUser { (user, error) -> Void in
       println("\(wuser.name) | \(wuser.email)")
     }
   }
+```
+
+### List
+
+* Get all lists user has permission
+```
+wlite.api.list.fetchLoggedInUserLists { (lists, error) -> Void in
+    if let werror = error {
+      println("\(werror.type) | \(werror.message)")
+    }
+    else if let wlists = lists{
+      println("lists: \(wlists.count)")
+      for list:List in wlists {
+        println("  \(list.title.capitalizedString) | \(list.listType.rawValue) ")
+      }
+    }
+  }
+```
+* Get a specific list
+```
+let listid = 32767 // id of a specific list
+wlite.api.list.fetchList(listid, callback: { (list, error) -> Void in
+  if let werror = error {
+    println("\(werror.type) | \(werror.message)")
+  }
+  else if let wlist = list {
+    println("list: \(wlist.id) | \(wlist.title.capitalizedString) | \(wlist.listType.rawValue) ")
+  }
+})
 ```
