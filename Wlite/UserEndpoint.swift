@@ -23,7 +23,7 @@ public class UserEndpoint {
                 if (error != nil) {
                     println("error: \(error)")
                 }
-                if (JSON != nil) {
+                else if (JSON != nil) {
                     if let rawObject = JSON as? [String:AnyObject]{
                         if let id = rawObject["id"] as? Int{
                             let wuser = User(rawUser: rawObject)
@@ -36,10 +36,16 @@ public class UserEndpoint {
                             }
                             callback(user: nil, error: werror)
                         }
+                        else {
+                            println("json: \(JSON)")
+                        }
                     }
                     else {
                         println("json: \(JSON)")
                     }
+                }
+                else {
+                    println("JSON: \(JSON)")
                 }
             })
     }

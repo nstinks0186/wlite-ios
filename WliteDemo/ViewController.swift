@@ -33,13 +33,10 @@ class ViewController: UIViewController {
         
         if (App.wlite.accessToken == nil) {
             self.navigationController?.performSegueWithIdentifier("showAuthVC", sender: self)
+        } else {
+            self.fetchUser()
+            self.testAPICalls()
         }
-        
-//        if (App.wlite.accessToken != nil) {
-//            fetchUser()
-//        } else {
-//            authenticate()
-//        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -72,17 +69,37 @@ class ViewController: UIViewController {
                 self.handleError(werror)
             }
             else {
-                println("lists: \(lists!)")
+                println("lists: \(lists!.count)")
+                for list:List in lists! {
+                    println("  \(list.id) | \(list.title.capitalizedString) | \(list.listType.rawValue) ")
+                }
             }
         }
+    }
+    
+    private func fetchList(listid:Int) {
+        App.wlite.api.list.fetchList(listid, callback: { (list, error) -> Void in
+            if let werror = error {
+                self.handleError(werror)
+            }
+            else if let wlist = list {
+                println("list: \(wlist.id) | \(wlist.title.capitalizedString) | \(wlist.listType.rawValue) ")
+            }
+        })
     }
     
     private func authenticate() {
         App.wlite.authorize({ (token) -> Void in
             self.fetchUser()
+            self.testAPICalls()
         }, failureHandler: { (error) -> Void in
             println("error: \(error)")
         });
+    }
+    
+    private func testAPICalls() {
+//        self.fetchLists()
+        self.fetchList(141552880)
     }
     
     private func handleError(werror:Error) {

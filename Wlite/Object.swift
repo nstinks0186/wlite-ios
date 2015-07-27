@@ -15,9 +15,9 @@ public enum ObjectType:String {
 }
 
 public class Object {
-    var id = 0
-    var revision = 0
-    var type = ObjectType.Undefined
+    public var id = 0
+    public var revision = 0
+    public var type = ObjectType.Undefined
     
     init (id:Int, revision:Int){
         self.id = id

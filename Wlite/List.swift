@@ -14,8 +14,8 @@ public enum ListType : String {
 }
 
 public class List : Object{
-    var title = ""
-    var listType : ListType = .List
+    public var title = ""
+    public var listType : ListType = .List
     
     convenience init (id:Int, revision:Int, title:String){
         self.init(id: id, revision: revision)
