@@ -55,6 +55,7 @@ public class ListEndpoint {
                     println("JSON: \(JSON)")
                 }
         }
+    
     }
     
     /**
@@ -83,7 +84,45 @@ public class ListEndpoint {
                             let list = List(rawList: rawObject)
                             callback(list: list, error: nil)
                         }
-                        else {                            
+                        else {
+                            println("JSON: \(JSON)")
+                        }
+                    }
+                }
+                else {
+                    println("JSON: \(JSON)")
+                }
+        }
+    }
+    
+    /**
+        Create a List
+    
+        :param: list The list
+        :param: callback The callback function
+    */
+    public func createList(list:List, callback:(list: List?, error: Error?) -> Void) {
+        let parameters : [ String : AnyObject] = ["title": list.title]
+        Alamofire
+            .request(ListRouter.CreateList(parameters))
+            .responseJSON(options: nil) {(request: NSURLRequest, response: NSHTTPURLResponse?, JSON: AnyObject?, error: NSError?) -> Void in
+                if (error != nil) {
+                    println("error: \(error)")
+                }
+                else if (JSON != nil) {
+                    if let rawObject = JSON as? [String:AnyObject] {
+                        if let error = rawObject["error"] as? [String:AnyObject]{
+                            let werror = Error(rawError: error)
+                            if werror.isAuthenticationError {
+                                Wlite.updateAccessToken(nil)
+                            }
+                            callback(list: nil, error: werror)
+                        }
+                        else if let id = rawObject["id"] as? Int{
+                            list.update(rawObject)
+                            callback(list: list, error: nil)
+                        }
+                        else {
                             println("JSON: \(JSON)")
                         }
                     }

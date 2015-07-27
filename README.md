@@ -87,3 +87,15 @@ wlite.api.list.fetchList(listid, callback: { (list, error) -> Void in
   }
 })
 ```
+* Create a list
+```
+let newlist = List(title:listtitle)
+App.wlite.api.list.createList(newlist, callback: { (list, error) -> Void in
+  if let werror = error {
+      self.handleError(werror)
+  }
+  else if let wlist = list {
+      println("new list: \(newlist.id) | \(newlist.title.capitalizedString) | \(newlist.listType.rawValue) ")
+  }
+})
+```

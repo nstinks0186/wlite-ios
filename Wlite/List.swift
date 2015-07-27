@@ -33,4 +33,22 @@ public class List : Object{
         self.listType = (listType == "inbox" ? .Inbox : .List)
     }
     
+    public convenience init(title:String) {
+        self.init(id: -1, revision: -1)
+        self.title = title
+    }
+    
+    public func update(rawList: [String:AnyObject]) {
+        let id = rawList["id"] as! Int
+        let revision = rawList["revision"] as! Int
+        let title = rawList["title"] as! String
+        let listType = rawList["list_type"] as! String
+        
+        self.id = id
+        self.revision = revision
+        self.title = title
+        self.listType = (listType == "inbox" ? .Inbox : .List)
+    }
+
+    
 }
