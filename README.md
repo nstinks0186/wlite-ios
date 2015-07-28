@@ -105,25 +105,25 @@ wlite.api.list.fetchLoggedInUserLists { (lists, error) -> Void in
 ```
 * Get a specific list
 ```
-let listid = 32767 // id of a specific list
-wlite.api.list.fetchList(listid) { (list, error) -> Void in
+let list = List(id: 141552880)
+wlite.api.list.fetchList(list) { (_, error)  in
   if let werror = error {
     println("error: \(werror.type.rawValue) | \(werror.message.rawValue)")
   }
-  else if let wlist = list {
-    println("list: \(wlist.id) | \(wlist.title.capitalizedString) | \(wlist.listType.rawValue) ")
+  else {
+    println("fetched list: \(list.id) | \(list.title)")
   }
 }
 ```
 * Create a list
 ```
-let newlist = List(title:"HolaMundo")
-wlite.api.list.createList(newlist) { (list, error) -> Void in
+let newlist = List(title:"NewList")
+wlite.api.list.createList(newlist) { (_, error)  in
   if let werror = error {
     println("error: \(werror.type.rawValue) | \(werror.message.rawValue)")
   }
-  else if let wlist = list {
-    println("new list: \(newlist.id) | \(newlist.title.capitalizedString) | \(newlist.listType.rawValue) ")
+  else {
+      println("new list: \(newlist.id) | \(newlist.title.capitalizedString) | \(newlist.listType.rawValue) ")
   }
 }
 ```

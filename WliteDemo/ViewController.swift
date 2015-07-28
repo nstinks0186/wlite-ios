@@ -77,29 +77,6 @@ class ViewController: UIViewController {
         }
     }
     
-    private func fetchList(listid:Int) {
-        App.wlite.api.list.fetchList(listid) { (list, error) -> Void in
-            if let werror = error {
-                self.handleError(werror)
-            }
-            else if let wlist = list {
-                println("list: \(wlist.id) | \(wlist.title.capitalizedString) | \(wlist.listType.rawValue) ")
-            }
-        }
-    }
-    
-    private func createListWithTitle(listtitle:String){
-        let newlist = List(title:listtitle)
-        App.wlite.api.list.createList(newlist) { (list, error) -> Void in
-            if let werror = error {
-                self.handleError(werror)
-            }
-            else if let wlist = list {
-                println("new list: \(newlist.id) | \(newlist.title.capitalizedString) | \(newlist.listType.rawValue) ")
-            }
-        }
-    }
-    
     private func authenticate() {
         App.wlite.authorize({ (token) -> Void in
             self.fetchUser()
@@ -111,8 +88,37 @@ class ViewController: UIViewController {
     
     private func testAPICalls() {
 //        self.fetchLists()
-//        self.fetchList(141552880)
-//        self.createListWithTitle("TestList")
+        
+        
+        
+        
+        // Get a specific List
+//        { (Void) -> Void in
+//            let list = List(id: 141552880)
+//            App.wlite.api.list.fetchList(list) { (_, error)  in
+//                if let werror = error {
+//                    self.handleError(werror)
+//                }
+//                else {
+//                    println("fetched list: \(list.id) | \(list.title)")
+//                }
+//            }
+//        }()
+        
+        
+        // Create a list
+//        { (Void) -> Void in
+//            let newlist = List(title:"NewList")
+//            App.wlite.api.list.createList(newlist) { (_, error)  in
+//                if let werror = error {
+//                    self.handleError(werror)
+//                }
+//                else {
+//                    println("new list: \(newlist.id) | \(newlist.title.capitalizedString) | \(newlist.listType.rawValue) ")
+//                }
+//            }
+//        }()
+        
         
         func testUpdateList () {
             let newlist = List(title:"NewList")

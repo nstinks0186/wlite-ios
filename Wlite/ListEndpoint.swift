@@ -59,7 +59,8 @@ public class ListEndpoint {
     }
     
     /**
-        Get a specific List
+        [DEPRECATED] Get a specific List. Use the following instead:
+          `fetchList(list:List, callback:(list: List?, error: Error?) -> Void)`
     
         :param: listid The id of list
         :param: callback The callback function
@@ -82,6 +83,43 @@ public class ListEndpoint {
                         }
                         else if let id = rawObject["id"] as? Int{
                             let list = List(rawList: rawObject)
+                            callback(list: list, error: nil)
+                        }
+                        else {
+                            println("JSON: \(JSON)")
+                        }
+                    }
+                }
+                else {
+                    println("response: \(response!.description)")
+                }
+        }
+    }
+    
+    /**
+    Get a specific List
+    
+    :param: list The list to be fetched
+    :param: callback The callback function
+    */
+    public func fetchList(list:List, callback:(list: List?, error: Error?) -> Void) {
+        Alamofire
+            .request(ListRouter.ReadList("\(list.id)"))
+            .responseJSON(options: nil) {(request: NSURLRequest, response: NSHTTPURLResponse?, JSON: AnyObject?, error: NSError?) -> Void in
+                if (error != nil) {
+                    println("error: \(error)")
+                }
+                else if (JSON != nil) {
+                    if let rawObject = JSON as? [String:AnyObject] {
+                        if let error = rawObject["error"] as? [String:AnyObject]{
+                            let werror = Error(rawError: error)
+                            if werror.isAuthenticationError {
+                                Wlite.updateAccessToken(nil)
+                            }
+                            callback(list: nil, error: werror)
+                        }
+                        else if let id = rawObject["id"] as? Int{
+                            list.update(rawObject)
                             callback(list: list, error: nil)
                         }
                         else {
