@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         // setup wlite
-        let appConfig = AppConfig(clientID:"**", clientSecret:"**", authCallbackUrl:"**")
+        let appConfig = AppConfig(clientID:"71436ba1a9dc81c908f1", clientSecret:"0974ff4a3fbd2403522a7608c5a227e2e06f8925cdab58fd7a34f8199dc8", authCallbackUrl:"https://dl.dropboxusercontent.com/u/33491043/sites/wlite/success.html")
         wlite = Wlite(appConfig: appConfig)
         
         // for convenience, share wlite instance across the app
