@@ -2,3 +2,8 @@ language: objective-c
 osx_image: xcode6.4
 xcode_project: Wlite.xcodeproj
 xcode_scheme: Wlite
+before_install: 
+  - brew update
+  - brew upgrade xctool
+  - brew install carthage
+  - carthage bootstrap --verbose
