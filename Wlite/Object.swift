@@ -11,6 +11,7 @@ import Foundation
 public enum ObjectType:String {
     case User = "user"
     case List = "list"
+    case Task = "task"
     case Undefined = ""
 }
 

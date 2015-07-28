@@ -17,11 +17,6 @@ public class List : Object{
     public var title = ""
     public var listType : ListType = .List
     
-    convenience init (id:Int, revision:Int, title:String){
-        self.init(id: id, revision: revision)
-        self.title = title
-    }
-    
     convenience init (rawList: [String:AnyObject]) {
         let id = rawList["id"] as! Int
         let revision = rawList["revision"] as! Int
@@ -36,6 +31,10 @@ public class List : Object{
     public convenience init(title:String) {
         self.init(id: -1, revision: -1)
         self.title = title
+    }
+    
+    public convenience init(id:Int) {
+        self.init(id: id, revision: -1)
     }
     
     func update(rawList: [String:AnyObject]) {

@@ -52,7 +52,7 @@ public class ListEndpoint {
                     }
                 }
                 else {
-                    println("JSON: \(JSON)")
+                    println("response: \(response!.description)")
                 }
         }
     
@@ -90,7 +90,7 @@ public class ListEndpoint {
                     }
                 }
                 else {
-                    println("JSON: \(JSON)")
+                    println("response: \(response!.description)")
                 }
         }
     }
@@ -98,7 +98,7 @@ public class ListEndpoint {
     /**
         Create a List
     
-        :param: list The list
+        :param: list The list to be created
         :param: callback The callback function
     */
     public func createList(list:List, callback:(list: List?, error: Error?) -> Void) {
@@ -128,7 +128,7 @@ public class ListEndpoint {
                     }
                 }
                 else {
-                    println("JSON: \(JSON)")
+                    println("response: \(response!.description)")
                 }
         }
     }
@@ -170,7 +170,7 @@ public class ListEndpoint {
                     }
                 }
                 else {
-                    println("JSON: \(JSON)")
+                    println("response: \(response!.description)")
                 }
         }
     }

@@ -114,7 +114,7 @@ class ViewController: UIViewController {
 //        self.fetchList(141552880)
 //        self.createListWithTitle("TestList")
         
-        func test () {
+        func testUpdateList () {
             let newlist = List(title:"NewList")
             App.wlite.api.list.createList(newlist) { (list, error) -> Void in
                 if let werror = error {
@@ -129,7 +129,7 @@ class ViewController: UIViewController {
                         if let werror = error {
                             self.handleError(werror)
                         }
-                        else if let wlist = list {
+                        else {
                             println("updated list: \(updatedList.id) | \(updatedList.title.capitalizedString) | \(updatedList.listType.rawValue) ")
                             
                         }
@@ -137,7 +137,21 @@ class ViewController: UIViewController {
                 }
             }
         }
-        test()
+//        testUpdateList()
+        
+        func testCreateTask() {
+            let list = List(id: 104379923)
+            let newtask = Task(title: "blah")
+            App.wlite.api.task.createTask(newtask, forList: list) { (task, error) -> Void in
+                if let werror = error {
+                    self.handleError(werror)
+                }
+                else {
+                    println("new task: \(newtask.id) | \(newtask.title)")
+                }
+            }
+        }
+//        testCreateTask()
         
         
     }

@@ -13,6 +13,7 @@ public class API {
     
     public let user: UserEndpoint = UserEndpoint()
     public let list: ListEndpoint = ListEndpoint()
+    public let task: TaskEndpoint = TaskEndpoint()
     
     let completionHandler = {(request: NSURLRequest, response: NSHTTPURLResponse?, JSON: AnyObject?, error: NSError?) -> Void in
         if (error != nil) {

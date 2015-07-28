@@ -37,6 +37,8 @@
 		D747D6331B629B5600B1C5C0 /* Wlite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D747D5D61B62830300B1C5C0 /* Wlite.framework */; };
 		D747D6361B629C5600B1C5C0 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D747D5F81B6289B300B1C5C0 /* Alamofire.framework */; };
 		D747D6381B629D0B00B1C5C0 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = D747D6371B629D0B00B1C5C0 /* Error.swift */; };
+		D780F52B1B6806FE00185AED /* TaskEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D780F52A1B6806FE00185AED /* TaskEndpoint.swift */; };
+		D780F52D1B68072600185AED /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = D780F52C1B68072600185AED /* Task.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +94,8 @@
 		D747D6261B6293E500B1C5C0 /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		D747D6291B62977600B1C5C0 /* UserRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRouter.swift; sourceTree = "<group>"; };
 		D747D6371B629D0B00B1C5C0 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		D780F52A1B6806FE00185AED /* TaskEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskEndpoint.swift; sourceTree = "<group>"; };
+		D780F52C1B68072600185AED /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +141,7 @@
 				D70F40AB1B62B329001B55D2 /* API.swift */,
 				D70F40AE1B62BE23001B55D2 /* UserEndpoint.swift */,
 				D70F40B01B62BE96001B55D2 /* ListEndpoint.swift */,
+				D780F52A1B6806FE00185AED /* TaskEndpoint.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -219,6 +224,7 @@
 				D747D6371B629D0B00B1C5C0 /* Error.swift */,
 				D70F40A11B62A950001B55D2 /* User.swift */,
 				D70F40B21B62C028001B55D2 /* List.swift */,
+				D780F52C1B68072600185AED /* Task.swift */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -481,12 +487,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				D70F40AC1B62B329001B55D2 /* API.swift in Sources */,
+				D780F52B1B6806FE00185AED /* TaskEndpoint.swift in Sources */,
 				D70F40B11B62BE96001B55D2 /* ListEndpoint.swift in Sources */,
 				D70F40A81B62B1E4001B55D2 /* ListRouter.swift in Sources */,
 				D70F40AA1B62B22B001B55D2 /* TaskRouter.swift in Sources */,
 				D70F40A01B62A8C8001B55D2 /* Object.swift in Sources */,
 				D70F40A41B62B17C001B55D2 /* AvatarRouter.swift in Sources */,
 				D70F40A61B62B1B6001B55D2 /* FolderRouter.swift in Sources */,
+				D780F52D1B68072600185AED /* Task.swift in Sources */,
 				D747D6381B629D0B00B1C5C0 /* Error.swift in Sources */,
 				D70F40A21B62A950001B55D2 /* User.swift in Sources */,
 				D70F40B31B62C028001B55D2 /* List.swift in Sources */,
