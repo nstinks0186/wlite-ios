@@ -57,11 +57,11 @@ func application(application: UIApplication, openURL url: NSURL, sourceApplicati
 ```
 * Authenticate:
 ```
-wlite.authorize({ (token) -> Void in
-    // Handle auth success here
-  }, failureHandler: { (error) -> Void in
-    // Handle auth failure here
-  })
+wlite.authorize { (token) -> Void in
+  // Handle auth success here
+}, failureHandler: { (error) -> Void in
+  // Handle auth failure here
+}
 ```
 
 ### Access Token
@@ -78,13 +78,13 @@ App.wlite.accessToken
 * Fetch logged in user
 ```
 wlite.api.user.fetchLoggedInUser { (user, error) -> Void in
-    if let werror = error{
-      println("error: \(werror.type.rawValue) | \(werror.message.rawValue)")
-    }
-    else if let wuser = user {
-      println("\(wuser.name) | \(wuser.email)")
-    }
+  if let werror = error{
+    println("error: \(werror.type.rawValue) | \(werror.message.rawValue)")
   }
+  else if let wuser = user {
+    println("\(wuser.name) | \(wuser.email)")
+  }
+}
 ```
 
 ### List
@@ -92,52 +92,68 @@ wlite.api.user.fetchLoggedInUser { (user, error) -> Void in
 * Get all lists user has permission
 ```
 wlite.api.list.fetchLoggedInUserLists { (lists, error) -> Void in
-    if let werror = error {
-      println("error: \(werror.type.rawValue) | \(werror.message.rawValue)")
-    }
-    else if let wlists = lists{
-      println("lists: \(wlists.count)")
-      for list:List in wlists {
-        println("  \(list.title.capitalizedString) | \(list.listType.rawValue) ")
-      }
+  if let werror = error {
+    println("error: \(werror.type.rawValue) | \(werror.message.rawValue)")
+  }
+  else if let wlists = lists{
+    println("lists: \(wlists.count)")
+    for list:List in wlists {
+      println("  \(list.title.capitalizedString) | \(list.listType.rawValue) ")
     }
   }
+}
 ```
 * Get a specific list
 ```
 let listid = 32767 // id of a specific list
-wlite.api.list.fetchList(listid, callback: { (list, error) -> Void in
+wlite.api.list.fetchList(listid) { (list, error) -> Void in
   if let werror = error {
     println("error: \(werror.type.rawValue) | \(werror.message.rawValue)")
   }
   else if let wlist = list {
     println("list: \(wlist.id) | \(wlist.title.capitalizedString) | \(wlist.listType.rawValue) ")
   }
-})
+}
 ```
 * Create a list
 ```
 let newlist = List(title:"HolaMundo")
-wlite.api.list.createList(newlist, callback: { (list, error) -> Void in
+wlite.api.list.createList(newlist) { (list, error) -> Void in
   if let werror = error {
     println("error: \(werror.type.rawValue) | \(werror.message.rawValue)")
   }
   else if let wlist = list {
     println("new list: \(newlist.id) | \(newlist.title.capitalizedString) | \(newlist.listType.rawValue) ")
   }
-})
+}
 ```
 * Update a list by overwriting properties
 ```
 // assuming updatedList is an actual list fetched from Wunderlist with id and revision values
 updatedList.title = "UpdatedList"
-wlite.api.list.updateList(updatedList, callback: { (list, error) -> Void in
+wlite.api.list.updateList(updatedList) { (list, error) -> Void in
   if let werror = error {
     println("error: \(werror.type.rawValue) | \(werror.message.rawValue)")
   }
   else if let wlist = list {
     println("updated list: \(updatedList.id) | \(updatedList.title.capitalizedString) | \(updatedList.listType.rawValue) ")
   }
-})
+}
+```
+
+### Task
+
+* Create a task
+```
+let list = List(id: 104379923)
+let newtask = Task(title: "blah")
+wlite.api.task.createTask(newtask, forList: list) { (task, error) -> Void in
+    if let werror = error {
+      println("error: \(werror.type.rawValue) | \(werror.message.rawValue)")
+    }
+    else {
+      println("new task: \(newtask.id) | \(newtask.title)")
+    }
+}
 ```
 
