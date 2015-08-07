@@ -39,6 +39,15 @@
 		D747D6381B629D0B00B1C5C0 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = D747D6371B629D0B00B1C5C0 /* Error.swift */; };
 		D780F52B1B6806FE00185AED /* TaskEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D780F52A1B6806FE00185AED /* TaskEndpoint.swift */; };
 		D780F52D1B68072600185AED /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = D780F52C1B68072600185AED /* Task.swift */; };
+		D7DCEB9A1B7536E2006C19AC /* FileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCEB991B7536E2006C19AC /* FileRouter.swift */; };
+		D7DCEB9C1B75376C006C19AC /* FilePreviewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCEB9B1B75376C006C19AC /* FilePreviewRouter.swift */; };
+		D7DCEB9E1B75379E006C19AC /* MembershipRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCEB9D1B75379E006C19AC /* MembershipRouter.swift */; };
+		D7DCEBA01B7537B8006C19AC /* NoteRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCEB9F1B7537B8006C19AC /* NoteRouter.swift */; };
+		D7DCEBA21B7537CD006C19AC /* PositionsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCEBA11B7537CD006C19AC /* PositionsRouter.swift */; };
+		D7DCEBA41B7537EA006C19AC /* ReminderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCEBA31B7537EA006C19AC /* ReminderRouter.swift */; };
+		D7DCEBA61B7537FC006C19AC /* SubtaskRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCEBA51B7537FC006C19AC /* SubtaskRouter.swift */; };
+		D7DCEBA81B753811006C19AC /* TaskCommentRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCEBA71B753811006C19AC /* TaskCommentRouter.swift */; };
+		D7DCEBAA1B753824006C19AC /* UploadRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCEBA91B753824006C19AC /* UploadRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +105,15 @@
 		D747D6371B629D0B00B1C5C0 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		D780F52A1B6806FE00185AED /* TaskEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskEndpoint.swift; sourceTree = "<group>"; };
 		D780F52C1B68072600185AED /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		D7DCEB991B7536E2006C19AC /* FileRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileRouter.swift; sourceTree = "<group>"; };
+		D7DCEB9B1B75376C006C19AC /* FilePreviewRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilePreviewRouter.swift; sourceTree = "<group>"; };
+		D7DCEB9D1B75379E006C19AC /* MembershipRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembershipRouter.swift; sourceTree = "<group>"; };
+		D7DCEB9F1B7537B8006C19AC /* NoteRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteRouter.swift; sourceTree = "<group>"; };
+		D7DCEBA11B7537CD006C19AC /* PositionsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PositionsRouter.swift; sourceTree = "<group>"; };
+		D7DCEBA31B7537EA006C19AC /* ReminderRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderRouter.swift; sourceTree = "<group>"; };
+		D7DCEBA51B7537FC006C19AC /* SubtaskRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubtaskRouter.swift; sourceTree = "<group>"; };
+		D7DCEBA71B753811006C19AC /* TaskCommentRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCommentRouter.swift; sourceTree = "<group>"; };
+		D7DCEBA91B753824006C19AC /* UploadRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,11 +291,20 @@
 		D747D6281B62970C00B1C5C0 /* Routers */ = {
 			isa = PBXGroup;
 			children = (
-				D747D6291B62977600B1C5C0 /* UserRouter.swift */,
 				D70F40A31B62B17C001B55D2 /* AvatarRouter.swift */,
-				D70F40A51B62B1B6001B55D2 /* FolderRouter.swift */,
+				D7DCEB991B7536E2006C19AC /* FileRouter.swift */,
+				D7DCEB9B1B75376C006C19AC /* FilePreviewRouter.swift */,
 				D70F40A71B62B1E4001B55D2 /* ListRouter.swift */,
+				D7DCEB9D1B75379E006C19AC /* MembershipRouter.swift */,
+				D7DCEB9F1B7537B8006C19AC /* NoteRouter.swift */,
+				D7DCEBA11B7537CD006C19AC /* PositionsRouter.swift */,
+				D7DCEBA31B7537EA006C19AC /* ReminderRouter.swift */,
+				D7DCEBA51B7537FC006C19AC /* SubtaskRouter.swift */,
 				D70F40A91B62B22B001B55D2 /* TaskRouter.swift */,
+				D7DCEBA71B753811006C19AC /* TaskCommentRouter.swift */,
+				D7DCEBA91B753824006C19AC /* UploadRouter.swift */,
+				D747D6291B62977600B1C5C0 /* UserRouter.swift */,
+				D70F40A51B62B1B6001B55D2 /* FolderRouter.swift */,
 			);
 			name = Routers;
 			sourceTree = "<group>";
@@ -486,17 +513,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7DCEBA41B7537EA006C19AC /* ReminderRouter.swift in Sources */,
+				D7DCEBA81B753811006C19AC /* TaskCommentRouter.swift in Sources */,
 				D70F40AC1B62B329001B55D2 /* API.swift in Sources */,
+				D7DCEB9C1B75376C006C19AC /* FilePreviewRouter.swift in Sources */,
 				D780F52B1B6806FE00185AED /* TaskEndpoint.swift in Sources */,
+				D7DCEB9E1B75379E006C19AC /* MembershipRouter.swift in Sources */,
 				D70F40B11B62BE96001B55D2 /* ListEndpoint.swift in Sources */,
 				D70F40A81B62B1E4001B55D2 /* ListRouter.swift in Sources */,
+				D7DCEB9A1B7536E2006C19AC /* FileRouter.swift in Sources */,
+				D7DCEBAA1B753824006C19AC /* UploadRouter.swift in Sources */,
 				D70F40AA1B62B22B001B55D2 /* TaskRouter.swift in Sources */,
 				D70F40A01B62A8C8001B55D2 /* Object.swift in Sources */,
 				D70F40A41B62B17C001B55D2 /* AvatarRouter.swift in Sources */,
+				D7DCEBA01B7537B8006C19AC /* NoteRouter.swift in Sources */,
 				D70F40A61B62B1B6001B55D2 /* FolderRouter.swift in Sources */,
+				D7DCEBA61B7537FC006C19AC /* SubtaskRouter.swift in Sources */,
 				D780F52D1B68072600185AED /* Task.swift in Sources */,
 				D747D6381B629D0B00B1C5C0 /* Error.swift in Sources */,
 				D70F40A21B62A950001B55D2 /* User.swift in Sources */,
+				D7DCEBA21B7537CD006C19AC /* PositionsRouter.swift in Sources */,
 				D70F40B31B62C028001B55D2 /* List.swift in Sources */,
 				D70F40AF1B62BE23001B55D2 /* UserEndpoint.swift in Sources */,
 				D70F40B81B66C989001B55D2 /* Wlite.swift in Sources */,
