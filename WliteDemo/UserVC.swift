@@ -42,7 +42,7 @@ class UserVC: UITableViewController {
                             callback(result: werror.message.rawValue, error: true)
                         }
                         else if let wuser = user {
-                            callback(result: wuser.name, error: false)
+                            callback(result: wuser.userString(), error: false)
                         }
                     }
                     

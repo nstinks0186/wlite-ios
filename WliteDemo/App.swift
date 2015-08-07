@@ -14,3 +14,18 @@ public class App {
     public static var wlite: Wlite!
     
 }
+
+extension Object {
+    func objectString() -> String {
+        return "id: \(self.id)"
+            + "\nrevision: \(self.revision)"
+    }
+}
+
+extension User {
+    func userString() -> String {
+        return super.objectString() +
+            "\nname: \(self.name)" +
+            "\nemail: \(self.email)"
+    }
+}

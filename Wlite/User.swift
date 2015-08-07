@@ -14,7 +14,7 @@ public class User : Object {
     
     public convenience init(rawUser:[String:AnyObject]) {
         let id = rawUser["id"] as! Int
-        let revision = rawUser["id"] as! Int
+        let revision = rawUser["revision"] as! Int
         self.init(id: id, revision: revision)
         
         if let type = rawUser["type"] as? String {
