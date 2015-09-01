@@ -29,6 +29,7 @@ public enum UserRouter: URLRequestConvertible {
         case .ReadUser():
             return "/user"
         case .ReadUsers():
+            // TODO: implement optional parameter `list_id` (https://developer.wunderlist.com/documentation/endpoints/user)
             return "/users"
         }
     }

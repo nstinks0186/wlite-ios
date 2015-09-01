@@ -56,6 +56,8 @@ public class UserEndpoint {
         :param: callback The callback function
     */
     public func fetchUsersLoggedInUserCanAccess(callback:(users: [User]?, error: Error?) -> Void) {
+        // TODO: implement optional parameter `list_id` (https://developer.wunderlist.com/documentation/endpoints/user)
+        
         Alamofire
             .request(UserRouter.ReadUsers())
             .responseJSON(options: nil, completionHandler: {(request: NSURLRequest, response: NSHTTPURLResponse?, JSON: AnyObject?, error: NSError?) -> Void in
