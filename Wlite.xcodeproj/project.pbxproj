@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D701B7DE1B961D090048518A /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D701B7DD1B961D090048518A /* MainVC.swift */; };
+		D701B7E01B962B5F0048518A /* ListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D701B7DF1B962B5F0048518A /* ListVC.swift */; };
 		D70F40A01B62A8C8001B55D2 /* Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70F409F1B62A8C8001B55D2 /* Object.swift */; };
 		D70F40A21B62A950001B55D2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70F40A11B62A950001B55D2 /* User.swift */; };
 		D70F40A41B62B17C001B55D2 /* AvatarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70F40A31B62B17C001B55D2 /* AvatarRouter.swift */; };
@@ -73,6 +74,7 @@
 
 /* Begin PBXFileReference section */
 		D701B7DD1B961D090048518A /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		D701B7DF1B962B5F0048518A /* ListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListVC.swift; sourceTree = "<group>"; };
 		D70F409F1B62A8C8001B55D2 /* Object.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Object.swift; sourceTree = "<group>"; };
 		D70F40A11B62A950001B55D2 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D70F40A31B62B17C001B55D2 /* AvatarRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarRouter.swift; sourceTree = "<group>"; };
@@ -325,6 +327,7 @@
 			isa = PBXGroup;
 			children = (
 				D7DCEBB21B75440D006C19AC /* UserVC.swift */,
+				D701B7DF1B962B5F0048518A /* ListVC.swift */,
 			);
 			name = Endpoints;
 			sourceTree = "<group>";
@@ -577,6 +580,7 @@
 				D7DCEBB31B75440D006C19AC /* UserVC.swift in Sources */,
 				D70F40B61B62D4E8001B55D2 /* AuthVC.swift in Sources */,
 				D7DCEBB01B754082006C19AC /* ResultVC.swift in Sources */,
+				D701B7E01B962B5F0048518A /* ListVC.swift in Sources */,
 				D747D60B1B628B6700B1C5C0 /* ViewController.swift in Sources */,
 				D747D6271B6293E500B1C5C0 /* App.swift in Sources */,
 				D701B7DE1B961D090048518A /* MainVC.swift in Sources */,

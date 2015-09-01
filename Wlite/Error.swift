@@ -21,12 +21,14 @@ enum ErrorRevision : String {
 public enum ErrorMessage : String {
     case UnknownServerError = "An unknown server error occurred"
     case MissingParameterError = "Missing parameter."
+    case RequestTimeoutError = "The request couldn't be answered in time"
     case Undefined = ""
 }
 
 public enum ErrorTranslationKey : String {
     case APIErrorUnknown = "api_error_unknown"
     case APIErrorMissingParams = "api_error_missing_params"
+    case GatewayTimeout = "gateway_timeout"
     case Undefined = ""
 }
 
@@ -36,11 +38,18 @@ public enum ErrorType : String {
     case Undefined = ""
 }
 
+// http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
+public enum ErrorStatus : Int {
+    case Undefined = -1
+    case GatewayTimeout  = 504
+}
+
 public class Error {
     var authentication = [ErrorAuthentication]()
     public var translationKey = ErrorTranslationKey.Undefined
     public var message = ErrorMessage.Undefined
     public var type = ErrorType.Undefined
+    public var status = ErrorStatus.Undefined
     
     public var isAuthenticationError : Bool {
         get {
@@ -51,7 +60,21 @@ public class Error {
         }
     }
     
-    init(authentication:[ErrorAuthentication], translationKey:ErrorTranslationKey, message:ErrorMessage, type:ErrorType){
+    public var isTimeoutError : Bool {
+        get {
+            return (message == ErrorMessage.RequestTimeoutError
+                && translationKey == ErrorTranslationKey.GatewayTimeout
+                && status == ErrorStatus.GatewayTimeout)
+        }
+    }
+    
+    init(translationKey:ErrorTranslationKey, message:ErrorMessage){
+        self.translationKey = translationKey
+        self.message = message
+    }
+
+    convenience init(authentication:[ErrorAuthentication], translationKey:ErrorTranslationKey, message:ErrorMessage, type:ErrorType){
+        self.init(translationKey:translationKey, message:message)
         self.authentication = authentication
         self.translationKey = translationKey
         self.message = message
@@ -91,6 +114,16 @@ public class Error {
             }
         }
         
-        self.init(authentication:authentication, translationKey:translationKey, message:message, type:type)
+        var status = ErrorStatus.Undefined
+        if let rawStatus = rawError["status"] as? Int {
+            if let tempStatus = ErrorStatus(rawValue: rawStatus) {
+                status = tempStatus
+            }
+        }
+        
+        self.init(translationKey:translationKey, message:message)
+        self.authentication = authentication
+        self.type = type
+        self.status = status
     }
 }

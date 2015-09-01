@@ -13,18 +13,23 @@ public enum UserRouter: URLRequestConvertible {
     static var OAuthToken: String?
     
     case ReadUser()
+    case ReadUsers()
     
     var method: Alamofire.Method {
         switch self {
         case .ReadUser:
             return .GET
+        case .ReadUsers:
+            return .GET
         }
     }
-    
+
     var path: String {
         switch self {
         case .ReadUser():
             return "/user"
+        case .ReadUsers():
+            return "/users"
         }
     }
     
