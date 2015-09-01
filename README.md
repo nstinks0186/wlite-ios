@@ -86,6 +86,17 @@ wlite.api.user.fetchLoggedInUser { (user, error) -> Void in
   }
 }
 ```
+* Fetch the users this user can access
+```
+App.wlite.api.user.fetchUsersLoggedInUserCanAccess { (users, error) -> Void in
+  if let werror = error{
+    println("error: \(werror.type.rawValue) | \(werror.message.rawValue)")
+  }
+  else if let wusers = users {
+    println("users count: \(wusers.count)")
+  }
+}
+```
 
 ### List
 
@@ -98,7 +109,7 @@ wlite.api.list.fetchLoggedInUserLists { (lists, error) -> Void in
   else if let wlists = lists{
     println("lists: \(wlists.count)")
     for list:List in wlists {
-      println("  \(list.title.capitalizedString) | \(list.listType.rawValue) ")
+      println("list:  \(list.title.capitalizedString) | \(list.listType.rawValue) ")
     }
   }
 }
@@ -123,7 +134,7 @@ wlite.api.list.createList(newlist) { (_, error)  in
     println("error: \(werror.type.rawValue) | \(werror.message.rawValue)")
   }
   else {
-      println("new list: \(newlist.id) | \(newlist.title.capitalizedString) | \(newlist.listType.rawValue) ")
+    println("new list: \(newlist.id) | \(newlist.title.capitalizedString) | \(newlist.listType.rawValue) ")
   }
 }
 ```
@@ -148,12 +159,12 @@ wlite.api.list.updateList(updatedList) { (list, error) -> Void in
 let list = List(id: 104379923)
 let newtask = Task(title: "blah")
 wlite.api.task.createTask(newtask, forList: list) { (task, error) -> Void in
-    if let werror = error {
-      println("error: \(werror.type.rawValue) | \(werror.message.rawValue)")
-    }
-    else {
-      println("new task: \(newtask.id) | \(newtask.title)")
-    }
+  if let werror = error {
+    println("error: \(werror.type.rawValue) | \(werror.message.rawValue)")
+  }
+  else {
+    println("new task: \(newtask.id) | \(newtask.title)")
+  }
 }
 ```
 
