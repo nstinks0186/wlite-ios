@@ -11,6 +11,7 @@ import Alamofire
 
 public enum TaskRouter: URLRequestConvertible {
     static var OAuthToken: String?
+    static var ClientID: String?
     
     case ReadTasks()
     case CreateTask([String: AnyObject])
@@ -55,8 +56,15 @@ public enum TaskRouter: URLRequestConvertible {
         let mutableURLRequest = NSMutableURLRequest(URL: URL.URLByAppendingPathComponent(path))
         mutableURLRequest.HTTPMethod = method.rawValue
         
-        if let token = TaskRouter.OAuthToken {
-            mutableURLRequest.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        if (TaskRouter.OAuthToken != nil && TaskRouter.ClientID != nil) {
+            // Wunderlist does not support "Authorization: Bearer" as defined in oAuth specs
+            // see https://developer.wunderlist.com/documentation/concepts/authorization
+            mutableURLRequest.setValue("Bearer \(TaskRouter.OAuthToken)", forHTTPHeaderField: "Authorization")
+            mutableURLRequest.setValue(TaskRouter.OAuthToken, forHTTPHeaderField: "X-Access-Token")
+            mutableURLRequest.setValue(TaskRouter.ClientID, forHTTPHeaderField: "X-Client-ID")
+        }
+        else {
+            // TODO: handle invalid auth
         }
         
         switch self {

@@ -47,10 +47,8 @@ public class Wlite {
         self.appConfig = appConfig
         
         if let token = accessToken {
-            Manager.sharedInstance.session.configuration.HTTPAdditionalHeaders = [
-                "X-Client-ID": self.appConfig.clientID,
-                "X-Access-Token": token
-            ]
+            updateRoutersToken(token)
+            updateRoutersClientId(appConfig.clientID)
             
             // check if token is valid
             self.api.user.fetchLoggedInUser { (user, error) -> Void in
@@ -98,18 +96,47 @@ public class Wlite {
             if let token = queryItem!.value{
                 Wlite.updateAccessToken(token)
                 
-                Manager.sharedInstance.session.configuration.HTTPAdditionalHeaders = [
-                    "X-Client-ID": self.appConfig.clientID,
-                    "X-Access-Token": token
-                ]
+                updateRoutersToken(token)
+                updateRoutersClientId(appConfig.clientID)
                 
                 authSuccessHandler?(token: token)
             }
             else {
                 // TODO: improve this shit
+                print("Authentication failed. Unknown error occured.")
+                print("url: \(url)")
 //                authFailureHandler?(error: NSNull())
             }
+        }else {
+            print("Authentication failed. Unknown error occured.")
+            print("url: \(url)")
         }
+    }
+    
+    // MARK: - Private helper methods
+    
+    private func updateRoutersClientId(clientID:String) {
+        AvatarRouter.ClientID = clientID
+        FolderRouter.ClientID = clientID
+        ListRouter.ClientID = clientID
+        TaskRouter.ClientID = clientID
+        UserRouter.ClientID = clientID
+    }
+    
+    private func updateRoutersToken(token:String) {
+        AvatarRouter.OAuthToken = token
+        FolderRouter.OAuthToken = token
+        ListRouter.OAuthToken = token
+        TaskRouter.OAuthToken = token
+        UserRouter.OAuthToken = token
+    }
+    
+    private func clearRoutersToken(){
+        AvatarRouter.OAuthToken = nil
+        FolderRouter.OAuthToken = nil
+        ListRouter.OAuthToken = nil
+        TaskRouter.OAuthToken = nil
+        UserRouter.OAuthToken = nil
     }
     
 }

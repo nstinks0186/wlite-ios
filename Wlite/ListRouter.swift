@@ -11,6 +11,7 @@ import Alamofire
 
 public enum ListRouter: URLRequestConvertible {
     static var OAuthToken: String?
+    static var ClientID: String?
     
     case ReadLists()
     case CreateList([String: AnyObject])
@@ -46,8 +47,6 @@ public enum ListRouter: URLRequestConvertible {
             return "/lists/\(listid)"
         case .DeleteList(let listid):
             return "/lists/\(listid)"
-//        default:
-//            return ""
         }
     }
     
@@ -58,8 +57,15 @@ public enum ListRouter: URLRequestConvertible {
         let mutableURLRequest = NSMutableURLRequest(URL: URL.URLByAppendingPathComponent(path))
         mutableURLRequest.HTTPMethod = method.rawValue
         
-        if let token = ListRouter.OAuthToken {
-            mutableURLRequest.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        if (ListRouter.OAuthToken != nil && ListRouter.ClientID != nil) {
+            // Wunderlist does not support "Authorization: Bearer" as defined in oAuth specs
+            // see https://developer.wunderlist.com/documentation/concepts/authorization
+            mutableURLRequest.setValue("Bearer \(ListRouter.OAuthToken)", forHTTPHeaderField: "Authorization")
+            mutableURLRequest.setValue(ListRouter.OAuthToken, forHTTPHeaderField: "X-Access-Token")
+            mutableURLRequest.setValue(ListRouter.ClientID, forHTTPHeaderField: "X-Client-ID")
+        }
+        else {
+            // TODO: handle invalid auth
         }
         
         switch self {

@@ -11,6 +11,7 @@ import Alamofire
 
 public enum FolderRouter: URLRequestConvertible {
     static var OAuthToken: String?
+    static var ClientID: String?
     
     case ReadFolders()
     case ReadFolderRevisions()
@@ -55,8 +56,15 @@ public enum FolderRouter: URLRequestConvertible {
         let mutableURLRequest = NSMutableURLRequest(URL: URL.URLByAppendingPathComponent(path))
         mutableURLRequest.HTTPMethod = method.rawValue
         
-        if let token = FolderRouter.OAuthToken {
-            mutableURLRequest.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        if (FolderRouter.OAuthToken != nil && FolderRouter.ClientID != nil) {
+            // Wunderlist does not support "Authorization: Bearer" as defined in oAuth specs
+            // see https://developer.wunderlist.com/documentation/concepts/authorization
+            mutableURLRequest.setValue("Bearer \(FolderRouter.OAuthToken)", forHTTPHeaderField: "Authorization")
+            mutableURLRequest.setValue(FolderRouter.OAuthToken, forHTTPHeaderField: "X-Access-Token")
+            mutableURLRequest.setValue(FolderRouter.ClientID, forHTTPHeaderField: "X-Client-ID")
+        }
+        else {
+            // TODO: handle invalid auth
         }
         
         switch self {

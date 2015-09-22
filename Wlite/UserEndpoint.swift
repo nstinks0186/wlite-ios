@@ -19,11 +19,32 @@ public class UserEndpoint {
     public func fetchLoggedInUser(callback:(user: User?, error: Error?) -> Void) {
         Alamofire
             .request(UserRouter.ReadUser())
-            .responseJSON(options: []) { (_, _, result) -> Void in
+            .responseJSON(options: []) { (request, response, result) -> Void in
                 if(result.isSuccess){
                     // TODO: this
+                    print("user: \(result.value)")
+                    if let rawObject = result.value as? [String:AnyObject]{
+                        if let _ = rawObject["id"] as? Int{
+                            let wuser = User(rawUser: rawObject)
+                            callback(user: wuser, error: nil)
+                        }
+                        else if let error = rawObject["error"] as? [String:AnyObject]{
+                            let werror = Error(rawError: error)
+                            if werror.isAuthenticationError {
+                                Wlite.updateAccessToken(nil)
+                            }
+                            callback(user: nil, error: werror)
+                        }
+                        else {
+                            print("json: \(result.value)")
+                        }
+                    }
+                    else {
+                        print("json: \(result.value)")
+                    }
+
                 }else{
-                    print("error: \(result)")
+                    print("error: \(result.value)")
                 }
         }
 //            .responseJSON(options: [], completionHandler: {(request: NSURLRequest, response: NSHTTPURLResponse?, JSON: AnyObject?, error: NSError?) -> Void in

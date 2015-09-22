@@ -11,6 +11,7 @@ import Alamofire
 
 public enum AvatarRouter: URLRequestConvertible {
     static var OAuthToken: String?
+    static var ClientID: String?
     
     case ReadAvatar([String: AnyObject])
     
@@ -35,8 +36,15 @@ public enum AvatarRouter: URLRequestConvertible {
         let mutableURLRequest = NSMutableURLRequest(URL: URL.URLByAppendingPathComponent(path))
         mutableURLRequest.HTTPMethod = method.rawValue
         
-        if let token = AvatarRouter.OAuthToken {
-            mutableURLRequest.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        if (AvatarRouter.OAuthToken != nil && AvatarRouter.ClientID != nil) {
+            // Wunderlist does not support "Authorization: Bearer" as defined in oAuth specs
+            // see https://developer.wunderlist.com/documentation/concepts/authorization
+            mutableURLRequest.setValue("Bearer \(AvatarRouter.OAuthToken)", forHTTPHeaderField: "Authorization")
+            mutableURLRequest.setValue(AvatarRouter.OAuthToken, forHTTPHeaderField: "X-Access-Token")
+            mutableURLRequest.setValue(AvatarRouter.ClientID, forHTTPHeaderField: "X-Client-ID")
+        }
+        else {
+            // TODO: handle invalid auth
         }
         
         switch self {
