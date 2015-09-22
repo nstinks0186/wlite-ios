@@ -82,7 +82,7 @@ public class Error {
     }
     
     public convenience init(rawError:[String:AnyObject]){
-        println("raw error: \(rawError)")
+        print("raw error: \(rawError)")
         
         var authentication = [ErrorAuthentication]()
         if  let rawauthentication = rawError["authentication"] as? NSArray {
@@ -95,21 +95,21 @@ public class Error {
         
         var translationKey = ErrorTranslationKey.Undefined
         if let rawtranslationKey = rawError["translation_key"] as? NSString {
-            if let tempTranslationKey = ErrorTranslationKey(rawValue: rawtranslationKey as! String) {
+            if let tempTranslationKey = ErrorTranslationKey(rawValue: rawtranslationKey as String) {
                 translationKey = tempTranslationKey
             }
         }
         
         var message = ErrorMessage.Undefined
         if let rawmessage = rawError["message"] as? NSString {
-            if let tempMessage = ErrorMessage(rawValue: rawmessage as! String) {
+            if let tempMessage = ErrorMessage(rawValue: rawmessage as String) {
                 message = tempMessage
             }
         }
         
         var type = ErrorType.Undefined
         if let rawtype = rawError["type"] as? NSString {
-            if let tempType = ErrorType(rawValue: rawtype as! String) {
+            if let tempType = ErrorType(rawValue: rawtype as String) {
                 type = tempType
             }
         }

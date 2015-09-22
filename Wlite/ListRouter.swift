@@ -46,14 +46,14 @@ public enum ListRouter: URLRequestConvertible {
             return "/lists/\(listid)"
         case .DeleteList(let listid):
             return "/lists/\(listid)"
-        default:
-            return ""
+//        default:
+//            return ""
         }
     }
     
     // MARK: URLRequestConvertible
     
-    public var URLRequest: NSURLRequest {
+    public var URLRequest: NSMutableURLRequest {
         let URL = NSURL(string: WunderlistAPIBaseURL)!
         let mutableURLRequest = NSMutableURLRequest(URL: URL.URLByAppendingPathComponent(path))
         mutableURLRequest.HTTPMethod = method.rawValue

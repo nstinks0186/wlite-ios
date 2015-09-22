@@ -27,7 +27,7 @@ public class Wlite {
     /**
         The access token string for logged in session.
         
-        :returns: The access token if there is a valid session.
+        - returns: The access token if there is a valid session.
     */
     
     public var accessToken : String? {
@@ -80,12 +80,12 @@ public class Wlite {
                 success: {
                     credential, response, parameters in
                     // this is actually useless
-                    println("success: \(credential) ; \(response) ; \(parameters)")
+                    print("success: \(credential) ; \(response) ; \(parameters)")
                 },
                 failure: {
                     (error:NSError!) -> Void in
                     // this is actually useless
-                    println(error.localizedDescription)
+                    print(error.localizedDescription)
             })
         }
         
@@ -106,8 +106,8 @@ public class Wlite {
                 authSuccessHandler?(token: token)
             }
             else {
-                // improve this shit
-                authFailureHandler?(error: NSError())
+                // TODO: improve this shit
+//                authFailureHandler?(error: NSNull())
             }
         }
     }
@@ -119,7 +119,7 @@ extension NSURL {
         get {
             let components = NSURLComponents(URL: self, resolvingAgainstBaseURL: false)!
             let allQueryItems = components.queryItems!
-            return allQueryItems as! [NSURLQueryItem]
+            return allQueryItems 
         }
     }
     

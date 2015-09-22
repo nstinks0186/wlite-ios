@@ -16,11 +16,11 @@ class ViewController: UIViewController {
     
     let completionHandler = {(request: NSURLRequest, response: NSHTTPURLResponse?, JSON: AnyObject?, error: NSError?) -> Void in
         if (error != nil) {
-            println("error: \(error)")
-            println("response: \(response)")
+            print("error: \(error)")
+            print("response: \(response)")
         }
         if (JSON != nil) {
-            println("result: \(JSON!)")
+            print("result: \(JSON!)")
         }
     }
 
@@ -55,7 +55,8 @@ class ViewController: UIViewController {
     private func fetchUser() {
         App.wlite.api.user.fetchLoggedInUser { (user, error) -> Void in
             if let werror = error{
-                self.handleError(werror)
+                print("\(werror)")
+//                self.handleError(werror)
             }
             else if let wuser = user {
                 self.userLabel.text = "\(wuser.name) | \(wuser.email)"
@@ -66,12 +67,13 @@ class ViewController: UIViewController {
     private func fetchLists() {
         App.wlite.api.list.fetchLoggedInUserLists { (lists, error) -> Void in
             if let werror = error {
-                self.handleError(werror)
+                print("\(werror)")
+//                self.handleError(werror)
             }
             else {
-                println("lists: \(lists!.count)")
+                print("lists: \(lists!.count)")
                 for list:List in lists! {
-                    println("  \(list.id) | \(list.title.capitalizedString) | \(list.listType.rawValue) ")
+                    print("  \(list.id) | \(list.title.capitalizedString) | \(list.listType.rawValue) ")
                 }
             }
         }
@@ -82,7 +84,7 @@ class ViewController: UIViewController {
             self.fetchUser()
             self.testAPICalls()
         }, failureHandler: { (error) -> Void in
-            println("error: \(error)")
+            print("error: \(error)")
         });
     }
     
@@ -124,19 +126,21 @@ class ViewController: UIViewController {
             let newlist = List(title:"NewList")
             App.wlite.api.list.createList(newlist) { (list, error) -> Void in
                 if let werror = error {
-                    self.handleError(werror)
+                    print("\(werror)")
+//                    self.handleError(werror)
                 }
-                else if let wlist = list {
-                    println("new list: \(newlist.id) | \(newlist.title.capitalizedString) | \(newlist.listType.rawValue) ")
+                else if let _ = list {
+                    print("new list: \(newlist.id) | \(newlist.title.capitalizedString) | \(newlist.listType.rawValue) ")
                     
                     let updatedList = newlist
                     updatedList.title = "UpdatedList"
                     App.wlite.api.list.updateList(updatedList, callback: { (list, error) -> Void in
                         if let werror = error {
-                            self.handleError(werror)
+                            print("\(werror)")
+//                            self.handleError(werror)
                         }
                         else {
-                            println("updated list: \(updatedList.id) | \(updatedList.title.capitalizedString) | \(updatedList.listType.rawValue) ")
+                            print("updated list: \(updatedList.id) | \(updatedList.title.capitalizedString) | \(updatedList.listType.rawValue) ")
                             
                         }
                     })
@@ -150,10 +154,11 @@ class ViewController: UIViewController {
             let newtask = Task(title: "blah")
             App.wlite.api.task.createTask(newtask, forList: list) { (task, error) -> Void in
                 if let werror = error {
-                    self.handleError(werror)
+                    print("\(werror)")
+//                    self.handleError(werror)
                 }
                 else {
-                    println("new task: \(newtask.id) | \(newtask.title)")
+                    print("new task: \(newtask.id) | \(newtask.title)")
                 }
             }
         }
@@ -162,14 +167,14 @@ class ViewController: UIViewController {
         
     }
     
-    private func handleError(werror:Error) {
-        if werror.isAuthenticationError {
-            self.authenticate()
-        }
-        else {
-            println("error: \(werror.type.rawValue) | \(werror.message.rawValue)")
-        }
-    }
+//    private func handleError(werror:Wlite.Error) {
+//        if werror.isAuthenticationError {
+//            self.authenticate()
+//        }
+//        else {
+//            print("error: \(werror.type.rawValue) | \(werror.message.rawValue)")
+//        }
+//    }
 
 }
 

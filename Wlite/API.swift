@@ -15,15 +15,23 @@ public class API {
     public let list: ListEndpoint = ListEndpoint()
     public let task: TaskEndpoint = TaskEndpoint()
     
-    let completionHandler = {(request: NSURLRequest, response: NSHTTPURLResponse?, JSON: AnyObject?, error: NSError?) -> Void in
-        if (error != nil) {
-            println("error: \(error)")
-            println("response: \(response)")
-        }
-        if (JSON != nil) {
-            println("result: \(JSON!)")
+    let completionHandler = {(request: NSURLRequest?, response: NSHTTPURLResponse?, result:Result<AnyObject>) -> Void in
+        if(result.isSuccess){
+            print("result: \(result)")
+        }else{
+            print("error: \(result)")
         }
     }
+//    {(request: NSURLRequest, response: NSHTTPURLResponse?, JSON: AnyObject?, error: NSError?) -> Void in
+//        if (error != nil) {
+//            print("error: \(error)")
+//            print("response: \(response)")
+//        }
+//        if (JSON != nil) {
+//            print("result: \(JSON!)")
+//        }
+//    }
+    
     
     
     // MARK: Avatar
@@ -37,12 +45,12 @@ public class API {
             .request(AvatarRouter.ReadAvatar(parameters))
             .response { (request, response, result, error) -> Void in
                 if (error != nil) {
-                    println("error: \(error)")
-                    println("response: \(response)")
+                    print("error: \(error)")
+                    print("response: \(response)")
                 }
                 else {
-                    println("error: \(result)")
-                    println("response: \(response)")
+                    print("error: \(result)")
+                    print("response: \(response)")
                 }
         }
         //            .responseJSON(options: nil, completionHandler: completionHandler)
@@ -81,13 +89,13 @@ public class API {
     func readFolders(){
         Alamofire
             .request(FolderRouter.ReadFolders())
-            .responseJSON(options: nil, completionHandler: completionHandler)
+            .responseJSON(options: [], completionHandler: completionHandler)
     }
     
     func readFolder(folderid:Int) {
         Alamofire
             .request(FolderRouter.ReadFolder("\(folderid)"))
-            .responseJSON(options: nil, completionHandler: completionHandler)
+            .responseJSON(options: [], completionHandler: completionHandler)
     }
     
     func createFolderWithTitle(title:String, lists listids:[Int]) {
@@ -105,7 +113,7 @@ public class API {
     func readFolderRevisions(){
         Alamofire
             .request(FolderRouter.ReadFolderRevisions())
-            .responseJSON(options: nil, completionHandler: completionHandler)
+            .responseJSON(options: [], completionHandler: completionHandler)
     }
     
     // MARK: List
@@ -113,13 +121,13 @@ public class API {
     func readLists() {
         Alamofire
             .request(ListRouter.ReadLists())
-            .responseJSON(options: nil, completionHandler: completionHandler)
+            .responseJSON(options: [], completionHandler: completionHandler)
     }
     
     func readList(listid: Int) {
         Alamofire
             .request(ListRouter.ReadList("\(listid)"))
-            .responseJSON(options: nil, completionHandler: completionHandler)
+            .responseJSON(options: [], completionHandler: completionHandler)
     }
     
     func createListWithTitle(title: String){
@@ -128,7 +136,7 @@ public class API {
         ]
         Alamofire
             .request(ListRouter.CreateList(parameters))
-            .responseJSON(options: nil, completionHandler: completionHandler)
+            .responseJSON(options: [], completionHandler: completionHandler)
     }
     
     func updateList(listid: Int, withRevision revision: Int, title newtitle: String){
@@ -310,7 +318,7 @@ public class API {
         ]
         Alamofire
             .request(TaskRouter.CreateTask(parameters))
-            .responseJSON(options: nil, completionHandler: completionHandler)
+            .responseJSON(options: [], completionHandler: completionHandler)
     }
     
     func updateTask(taskid: Int, withRevision revision: Int, title newtitle: String){

@@ -50,7 +50,7 @@ public enum FolderRouter: URLRequestConvertible {
     
     // MARK: URLRequestConvertible
     
-    public var URLRequest: NSURLRequest {
+    public var URLRequest: NSMutableURLRequest {
         let URL = NSURL(string: WunderlistAPIBaseURL)!
         let mutableURLRequest = NSMutableURLRequest(URL: URL.URLByAppendingPathComponent(path))
         mutableURLRequest.HTTPMethod = method.rawValue

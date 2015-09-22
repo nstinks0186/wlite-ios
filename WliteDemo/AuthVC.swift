@@ -33,7 +33,7 @@ class AuthVC: UIViewController {
                 
             });
         }, failureHandler: { (error) -> Void in
-            println("error: \(error)")
+            print("error: \(error)")
         })
         
     }
